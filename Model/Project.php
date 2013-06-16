@@ -17,6 +17,27 @@ App::uses('AppModel', 'Model');
  */
 class Project extends AppModel {
     
-    #
+    /**
+     * Display field
+     *
+     * @var string
+     */
+    public $displayField = 'name';
+    
+    /**
+     * belongsTo property
+     *
+     * @var array
+     * @link http://book.cakephp.org/2.0/en/models/associations-linking-models-together.html
+     */
+    public $belongsTo = array('Client');
+    
+    /**
+     * hasMany property
+     *
+     * @var string
+     * @link http://book.cakephp.org/2.0/en/models/associations-linking-models-together.html
+     */
+    public $hasMany = 'ProjectMeta';
     
 }

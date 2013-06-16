@@ -17,6 +17,35 @@ App::uses('AppModel', 'Model');
  */
 class User extends AppModel {
     
-    #
+    /**
+     * Display field
+     *
+     * @var string
+     */
+    public $displayField = 'email';
+    
+    /**
+     * hasMany property
+     *
+     * @var array
+     * @link http://book.cakephp.org/2.0/en/models/associations-linking-models-together.html
+     */
+    public $hasMany = array('UserMeta');
+
+    /**
+     * belongsTo property
+     *
+     * @var array
+     * @link http://book.cakephp.org/2.0/en/models/associations-linking-models-together.html
+     */
+    public $belongsTo = array('Client', 'Group');
+    
+    /**
+     * hasAndBelongsToMany property
+     *
+     * @var array
+     * @link http://book.cakephp.org/2.0/en/models/associations-linking-models-together.html
+     */
+    public $hasAndBelongsToMany = array('Project');
     
 }

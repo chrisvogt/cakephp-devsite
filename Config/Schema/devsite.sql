@@ -121,6 +121,19 @@ CREATE  TABLE IF NOT EXISTS `projects_tags` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `projects_users`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `projects_users` (
+  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `project_id` INT(11) UNSIGNED NOT NULL ,
+  `user_id` INT(11) UNSIGNED NOT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `project_id` (`project_id` ASC) ,
+  INDEX `user_id` (`user_id` ASC) )
+ENGINE = InnoDB;
+
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

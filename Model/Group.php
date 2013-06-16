@@ -17,6 +17,19 @@ App::uses('AppModel', 'Model');
  */
 class Group extends AppModel {
     
-    #
+    /**
+     * Display field
+     *
+     * @var string
+     */
+    public $displayField = 'name';
+    
+    /**
+     * hasMany property
+     *
+     * @var array
+     * http://book.cakephp.org/2.0/en/models/associations-linking-models-together.html
+     */
+    public $hasMany = array('User');
     
 }

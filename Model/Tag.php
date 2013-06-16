@@ -17,6 +17,19 @@ App::uses('AppModel', 'Model');
  */
 class Tag extends AppModel {
     
-    #
+    /**
+     * Display field
+     *
+     * @var string
+     */
+    public $displayField = 'name';
+    
+    /**
+     * Behaviors
+     *
+     * @var array
+     * @link http://book.cakephp.org/2.0/en/core-libraries/behaviors/tree.html
+     */
+    public $actsAs = array('Tree');
     
 }

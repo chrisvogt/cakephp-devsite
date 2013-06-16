@@ -17,6 +17,12 @@ App::uses('AppModel', 'Model');
  */
 class ProjectMeta extends AppModel {
     
-    #
+    /**
+     * belongsTo property
+     *
+     * @var array
+     * @link http://book.cakephp.org/2.0/en/models/associations-linking-models-together.html
+     */
+    public $belongsTo = array('Project');
     
 }

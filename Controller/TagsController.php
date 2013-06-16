@@ -19,6 +19,9 @@ App::uses('AppController', 'Controller');
  */
 class TagsController extends AppController {
     
-    #
+    public function index() {
+        $data = $this->Tag->generateTreeList(null, null, null, '&nbsp;&nbsp;&nbsp;');
+        debug($data); die;
+    }
     
 }
