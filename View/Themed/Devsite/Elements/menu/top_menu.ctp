@@ -13,6 +13,7 @@
             <?php echo $this->element('menu/login_logout'); ?> 
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
+              <li><?php echo $this->Html->link(__('Projects'), array('controller' => 'projects')); ?> </li>
               <li><a href="#">About</a></li>
               <li><a href="#">Contact</a></li>
             </ul>

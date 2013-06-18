@@ -29,7 +29,9 @@ class ProjectsController extends AppController {
 			throw new NotFoundException(__('Invalid project'));
 		}
 		$options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
-		$this->set('project', $this->Project->find('first', $options));
+                $project = $this->Project->find('first', $options);
+                $this->set('title_for_layout', $project['Project']['name']);
+		$this->set('project', $project);
 	}
 
 /**
