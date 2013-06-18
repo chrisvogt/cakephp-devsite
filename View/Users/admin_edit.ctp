@@ -12,8 +12,6 @@
                 <li><?php echo $this->Html->link(__('New Group'), array('controller' => 'groups', 'action' => 'add')); ?> </li>
                 <li><?php echo $this->Html->link(__('List Clients'), array('controller' => 'clients', 'action' => 'index')); ?> </li>
                 <li><?php echo $this->Html->link(__('New Client'), array('controller' => 'clients', 'action' => 'add')); ?> </li>
-                <li><?php echo $this->Html->link(__('List User Meta'), array('controller' => 'user_meta', 'action' => 'index')); ?> </li>
-                <li><?php echo $this->Html->link(__('New User Metum'), array('controller' => 'user_meta', 'action' => 'add')); ?> </li>
                 <li><?php echo $this->Html->link(__('List Projects'), array('controller' => 'projects', 'action' => 'index')); ?> </li>
                 <li><?php echo $this->Html->link(__('New Project'), array('controller' => 'projects', 'action' => 'add')); ?> </li>
             </ul><!-- .nav nav-list bs-docs-sidenav -->
