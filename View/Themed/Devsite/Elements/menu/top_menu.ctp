@@ -10,9 +10,7 @@
           </button>
           <?php echo $this->Html->link('<i class="icon-code icon-white">&nbsp;</i> ' . __('devsite'), '/', array('class' => 'brand', 'escape' => false)); ?> 
           <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link">Username</a>
-            </p>
+            <?php echo $this->element('menu/login_logout'); ?> 
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#">About</a></li>
