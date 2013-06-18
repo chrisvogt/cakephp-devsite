@@ -1,28 +1,34 @@
 <?php
-/**
- * User Meta model
- *
- * User metadata model for
- * CakePHP 2.x.
- *
- * @author chrisvogt <@c1v0>
- */
 App::uses('AppModel', 'Model');
-
 /**
- * User meta model for Cake.
+ * UserMetum Model
  *
- * @package     CakePHP-devSite
- * @subpackage  app.Model
+ * @property User $User
  */
 class UserMetum extends AppModel {
-    
-    /**
-     * belongsTo property
-     *
-     * @var array
-     * @link http://book.cakephp.org/2.0/en/models/associations-linking-models-together.html
-     */
-    public $belongsTo = array('user');
-    
+
+/**
+ * Display field
+ *
+ * @var string
+ */
+	public $displayField = 'key';
+
+
+	//The Associations below have been created with all possible keys, those that are not needed can be removed
+
+/**
+ * belongsTo associations
+ *
+ * @var array
+ */
+	public $belongsTo = array(
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'user_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
 }
