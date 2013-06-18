@@ -30,7 +30,8 @@ Cache::config('default', array('engine' => 'File'));
 // Load Copula
 CakePlugin::load('DebugKit');
 
-CakePlugin::load('Github');
+// Load Github Plugin
+# CakePlugin::load('Github');
 
 /**
  * The settings below can be used to set additional paths to models, views and controllers.
