@@ -15,7 +15,7 @@ App::uses('AppModel', 'Model');
  * @package     CakePHP-devSite
  * @subpackage  app.Model
  */
-class UserMeta extends AppModel {
+class UserMetum extends AppModel {
     
     /**
      * belongsTo property

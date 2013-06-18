@@ -1,6 +1,6 @@
 <?php
 /**
- * User metas controller
+ * User meta controller
  *
  * Application user metas controller for
  * CakePHP 2.x.
@@ -10,13 +10,13 @@
 App::uses('AppController', 'Controller');
 
 /**
- * User metas Controller
+ * User meta Controller
  *
  * @package         CakePHP-devSite
  * @subpackage      app.Controller
  * @link            https://github.com/chrisvogt/cakephp-devsite
  */
-class UserMetasController extends AppController {
+class UserMetaController extends AppController {
     
     #
     

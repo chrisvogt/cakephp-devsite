@@ -10,13 +10,13 @@
 App::uses('AppController', 'Controller');
 
 /**
- * Project Metas Controller
+ * Project Meta Controller
  *
  * @package         CakePHP-devSite
  * @subpackage      app.Controller
  * @link            https://github.com/chrisvogt/cakephp-devsite
  */
-class ProjectMetasController extends AppController {
+class ProjectMetaController extends AppController {
     
     #
     
