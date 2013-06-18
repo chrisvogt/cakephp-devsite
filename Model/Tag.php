@@ -27,9 +27,17 @@ class Tag extends AppModel {
     /**
      * Behaviors
      *
-     * @var array
+     * @var string
      * @link http://book.cakephp.org/2.0/en/core-libraries/behaviors/tree.html
      */
-    public $actsAs = array('Tree');
+    public $actsAs = array('Tree' => array('parent' => 'parent_id'));
+    
+    /**
+     * hasAndBelongsToMany
+     *
+     * @var mixed (array|string)
+     * @link http://book.cakephp.org/2.0/en/core-libraries/behaviors/tree.html
+     */
+    public $hasAndBelongsToMany = array('Project');    
     
 }

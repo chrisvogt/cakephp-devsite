@@ -40,4 +40,11 @@ class Project extends AppModel {
      */
     public $hasMany = 'ProjectMetum';
     
+    /**
+     * hasAndBelongsToMany property
+     *
+     * @var array
+     * @link http://book.cakephp.org/2.0/en/models/associations-linking-models-together.html
+     */
+    public $hasAndBelongsToMany = array('Tag');
 }
