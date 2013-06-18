@@ -62,6 +62,7 @@ $siteDescription = __d('dev_site', 'devsite: rapid dev team site builder.');
 	<body>
             <?php echo $this->element('menu/top_menu'); ?>
             
+            <?php if ($this->params->here !== '/') echo $this->element('header/masthead'); ?>
             <?php if ($this->params->here === '/') echo $this->element('header/jumbotron'); ?>
             <?php if ($this->params->here === '/') echo $this->element('pane/social'); ?>
             
