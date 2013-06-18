@@ -162,11 +162,11 @@
 			<td><?php echo $project['id']; ?></td>
 			<td><?php echo $project['client_id']; ?></td>
 			<td><?php echo $project['name']; ?></td>
-			<td><?php echo $project['content']; ?></td>
+			<td><?php echo $this->Text->excerpt($project['content'], null); ?></td>
 			<td><?php echo $project['is_active']; ?></td>
 			<td><?php echo $project['is_private']; ?></td>
-			<td><?php echo $project['created']; ?></td>
-			<td><?php echo $project['modified']; ?></td>
+			<td><?php echo $this->Time->format($project['created']); ?></td>
+			<td><?php echo $this->Time->format($project['modified']); ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'projects', 'action' => 'view', $project['id']), array('class' => 'btn btn-mini')); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'projects', 'action' => 'edit', $project['id']), array('class' => 'btn btn-mini')); ?>
