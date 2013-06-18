@@ -112,17 +112,17 @@
                             <td class="actions">
                                 <?php echo $this->Html->link(__('View'), array('controller' => 'user_meta', 'action' => 'view', $userMetum['id']), array('class' => 'btn btn-mini')); ?>
                                 <?php echo $this->Html->link(__('Edit'), array('controller' => 'user_meta', 'action' => 'edit', $userMetum['id']), array('class' => 'btn btn-mini')); ?>
-        <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'user_meta', 'action' => 'delete', $userMetum['id']), array('class' => 'btn btn-mini'), __('Are you sure you want to delete # %s?', $userMetum['id'])); ?>
+                                <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'user_meta', 'action' => 'delete', $userMetum['id']), array('class' => 'btn btn-mini'), __('Are you sure you want to delete # %s?', $userMetum['id'])); ?>
                             </td>
                         </tr>
-    <?php endforeach; ?>
+                    <?php endforeach; ?>
                 </table><!-- .table table-striped table-bordered -->
 
-<?php endif; ?>
+            <?php endif; ?>
 
 
             <div class="actions">
-<?php echo $this->Html->link('<i class="icon-plus icon-white"></i> ' . __('New User Metum'), array('controller' => 'user_meta', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>				</div><!-- .actions -->
+                <?php echo $this->Html->link('<i class="icon-plus icon-white"></i> ' . __('New User Metum'), array('controller' => 'user_meta', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>				</div><!-- .actions -->
 
         </div><!-- .related -->
 
@@ -131,7 +131,7 @@
 
             <h3><?php echo __('Related Projects'); ?></h3>
 
-<?php if (!empty($user['Project'])): ?>
+            <?php if (!empty($user['Project'])): ?>
 
                 <table class="table table-striped table-bordered">
                     <tr>
@@ -160,18 +160,18 @@
                             <td><?php echo $this->Time->format($project['modified']); ?></td>
                             <td class="actions">
                                 <?php echo $this->Html->link(__('View'), array('controller' => 'projects', 'action' => 'view', $project['id']), array('class' => 'btn btn-mini')); ?>
-        <?php echo $this->Html->link(__('Edit'), array('controller' => 'projects', 'action' => 'edit', $project['id']), array('class' => 'btn btn-mini')); ?>
-                        <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'projects', 'action' => 'delete', $project['id']), array('class' => 'btn btn-mini'), __('Are you sure you want to delete # %s?', $project['id'])); ?>
+                                <?php echo $this->Html->link(__('Edit'), array('controller' => 'projects', 'action' => 'edit', $project['id']), array('class' => 'btn btn-mini')); ?>
+                                <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'projects', 'action' => 'delete', $project['id']), array('class' => 'btn btn-mini'), __('Are you sure you want to delete # %s?', $project['id'])); ?>
                             </td>
                         </tr>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
                 </table><!-- .table table-striped table-bordered -->
 
-<?php endif; ?>
+            <?php endif; ?>
 
 
             <div class="actions">
-<?php echo $this->Html->link('<i class="icon-plus icon-white"></i> ' . __('New Project'), array('controller' => 'projects', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>				</div><!-- .actions -->
+                <?php echo $this->Html->link('<i class="icon-plus icon-white"></i> ' . __('New Project'), array('controller' => 'projects', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>				</div><!-- .actions -->
 
         </div><!-- .related -->
 
