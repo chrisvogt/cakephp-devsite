@@ -33,9 +33,9 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
     
-    public $theme = "Cakestrap";
+    public $theme = "Devsite";
     
-#    public $components = array('DebugKit.Toolbar');
+    public $components = array('DebugKit.Toolbar');
     
     public $scaffold;
     
