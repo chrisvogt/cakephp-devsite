@@ -49,21 +49,20 @@
             <table class="table table-bordered">
                 <tr>
                     <td>
-                        <?php echo $this->Html->link('<i class="icon-code-fork">&nbsp;</i> ' . __('Fork on Github'), '#', array('escape' => false, 'class' => 'btn btn-block')); ?> 
-                        <?php echo $this->Html->link('<i class="icon-star">&nbsp;</i> ' . __('Star on Github'), '#', array('escape' => false, 'class' => 'btn btn-block')); ?> 
+                        <?php echo $this->Html->link('<i class="icon-code-fork">&nbsp;</i> ' . __('Fork on Github'), $repo['html_url'] . '/fork', array('escape' => false, 'class' => 'btn btn-block')); ?> 
                     </td>
                 </tr>
                 <tr>
-                    <td><i class="icon-retweet">&nbsp;</i> 23 commits</td>
+                    <td><i class="icon-retweet">&nbsp;</i> <?php echo $commits['count']; ?> commits</td>
                 </tr>
                 <tr>
                     <td><i class="icon-calendar">&nbsp;</i> Created <?php echo h($this->Time->format($project['Project']['created'])); ?></td>
                 </tr>
                 <tr>
-                    <td><i class="icon-calendar-empty">&nbsp;</i> Last updated <?php echo h($this->Time->format($project['Project']['modified'])); ?></td>
+                    <td><i class="icon-calendar-empty">&nbsp;</i> Last updated <?php echo h($this->Time->niceShort($repo['updated_at'], 'America/Phoenix')); ?></td>
                 </tr>
                 <tr>
-                    <td><i class="icon-github-sign">&nbsp;</i> Repository: <a href="#">cakephp-devsite</a></td>
+                    <td><i class="icon-github-sign">&nbsp;</i> Repository: <?php echo $this->Html->link($repo['name'], $repo['html_url']); ?> </td>
                 </tr>
             </table>
 

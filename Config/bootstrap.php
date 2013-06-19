@@ -27,6 +27,15 @@
 // Setup a 'default' cache configuration for use in the application.
 Cache::config('default', array('engine' => 'File'));
 
+// 'Short cache' - 1 hour
+Cache::config('gh', array(
+    'engine' => 'File',
+    'duration' => '+1 hours',
+    'path' => CACHE,
+    'prefix' => 'devsite_gh_',
+    'path' => CACHE . 'gh' . DS,
+));
+
 // Load Copula
 CakePlugin::load('DebugKit');
 

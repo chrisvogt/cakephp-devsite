@@ -6,6 +6,8 @@ App::uses('AppController', 'Controller');
  * @property Project $Project
  */
 class ProjectsController extends AppController {
+    
+    public $components = array('GithubApi');
 
 /**
  * index method
@@ -30,8 +32,11 @@ class ProjectsController extends AppController {
 		}
 		$options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
                 $project = $this->Project->find('first', $options);
-                $this->set('title_for_layout', $project['Project']['name']);
-		$this->set('project', $project);
+                $repoMeta = $this->_processRepoUrls(Set::extract('/ProjectMetum[key=repo][:first]', $project));
+                $repo = $this->GithubApi->getRepoByFullName($repoMeta['repo']);
+                $commits['count'] = count($this->GithubApi->getCommitsByFullName($repoMeta['repo']));
+                $title_for_layout = $project['Project']['name'];
+		$this->set(compact('project', 'repo', 'commits', 'title_for_layout'));
 	}
 
 /**
@@ -200,4 +205,16 @@ class ProjectsController extends AppController {
 		$this->Session->setFlash(__('Project was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
+        
+        private function _processRepoUrls($repo) {
+            $repoUrl = Set::classicExtract($repo, '{n}.ProjectMetum.value');            
+            if(isset($repoUrl[0])) {
+                $strippedUrl = rtrim($repoUrl[0], '.git');
+                $urls = array('repo'  => $strippedUrl);
+                return $urls;
+            } else {
+                return false;
+            }
+        }
+        
 }
