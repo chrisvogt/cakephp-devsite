@@ -47,9 +47,9 @@ Configure::write('site_name', 'CHRISVOGT.me');
  *
  */
         Configure::write('social', array(
-                'twitter' => 'http://twitter.com/c1v0',
-                'github' => 'http://github.com/chrisvogt',
-                'linkedin' => 'http://linkedin.com/chr1sv0gt'
+                'twitter' => 'c1v0',
+                'github' => 'chrisvogt',
+                'linkedin' => 'chr1sv0gt'
         ));
 
 // Load DebugKit

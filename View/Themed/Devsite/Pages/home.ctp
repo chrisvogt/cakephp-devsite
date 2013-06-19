@@ -55,8 +55,7 @@
                     </div>
                 </div>
                 <div class="box-content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod auctor augue et cursus. Aliquam sed feugiat ipsum, id viverra urna. Fusce ut turpis rutrum, hendrerit mi sit amet, vestibulum orci. Suspendisse sit amet molestie elit. Pellentesque ut risus viverra, imperdiet nunc sit amet, consequat augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin adipiscing tortor nec malesuada malesuada.
-                    <br class="clearfix" />
+                    <?php debug($events); ?>
                 </div>
             </div><!--/span-->
           </div><!--/row-->

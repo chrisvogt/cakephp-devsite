@@ -23,10 +23,10 @@ $siteDescription = __d('dev_site', 'devsite: rapid dev team site builder.');
 
 	<head>
             <?php echo $this->Html->charset(); ?> 
-            <!--
-       ___ __         
-     _{___{__}\      Powered by @C1V0's Devsite.
-    {_}      `\)            
+            <!--     Devsite by @C1V0, FOSS.
+       ___ __        
+     _{___{__}\      Buy it, use it, break it, fix it,
+    {_}      `\)     trash it, change it, mail - upgrade it.
    {_}        `            _.-''''--.._
    {_}                    //'.--.  \___`.
     { }__,_.--~~~-~~~-~~-::.---. `-.\  `.)
