@@ -10,7 +10,26 @@
                     </div>
                 </div>
                 <div class="box-content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod auctor augue et cursus. Aliquam sed feugiat ipsum, id viverra urna. Fusce ut turpis rutrum, hendrerit mi sit amet, vestibulum orci. Suspendisse sit amet molestie elit. Pellentesque ut risus viverra, imperdiet nunc sit amet, consequat augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin adipiscing tortor nec malesuada malesuada.
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Last Commit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            foreach ($projects as $key => $project) { ?> 
+                            <tr>
+                                <td><?php echo $this->Html->link(__($project['Project']['name']), array('controller' => 'projects', 'action' => 'view', $project['Project']['id'])); ?> </td>
+                                <td>01/01/01</td>
+                            </tr>
+                            <?php } ?> 
+                        </tbody>
+                    </table>
+                    <div class="pull-right" style="margin-top:-10px;">
+                        <?php echo $this->Html->link(__('View All'), array('controller' => 'projects', 'action' => 'index'), array('class' => 'btn btn-small')); ?> 
+                    </div>
                     <br class="clearfix" />
                 </div>
             </div><!--/span-->
