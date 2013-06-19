@@ -8,12 +8,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <?php echo $this->Html->link('<i class="icon-code icon-white">&nbsp;</i> ' . __('devsite'), '/', array('class' => 'brand', 'escape' => false)); ?> 
+          <?php echo $this->Html->link('<i class="icon-code icon-white">&nbsp;</i> ' . Configure::read('site_name'), '/', array('class' => 'brand', 'escape' => false)); ?> 
           <div class="nav-collapse collapse">
             <?php echo $this->element('menu/login_logout'); ?> 
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
-              <li><?php echo $this->Html->link(__('Projects'), array('controller' => 'projects')); ?> </li>
+              <li><?php echo $this->Html->link(__('Projects'), array('controller' => 'projects', 'action' => 'index')); ?> </li>
               <li><a href="#">About</a></li>
               <li><a href="#">Contact</a></li>
             </ul>

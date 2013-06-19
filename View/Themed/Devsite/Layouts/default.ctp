@@ -23,6 +23,20 @@ $siteDescription = __d('dev_site', 'devsite: rapid dev team site builder.');
 
 	<head>
             <?php echo $this->Html->charset(); ?> 
+            <!--
+       ___ __         
+     _{___{__}\      Powered by @C1V0's Devsite.
+    {_}      `\)            
+   {_}        `            _.-''''--.._
+   {_}                    //'.--.  \___`.
+    { }__,_.--~~~-~~~-~~-::.---. `-.\  `.)
+     `-.{_{_{_{_{_{_{_{_//  -- 8;=- `
+        `-:,_.:,_:,_:,.`\\._ ..'=- , 
+            // // // //`-.`\`   .-'/
+     jgs   << << << <<    \ `--'  /----)
+            ^  ^  ^  ^     `-.....--'''
+            
+            -->
             <title><?php echo $title_for_layout; ?> | <?php echo $siteDescription; ?> </title>
             <?php echo $this->Html->meta('icon'); ?> 
             <?php echo $this->fetch('meta'); ?> 

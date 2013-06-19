@@ -7,7 +7,7 @@ App::uses('AppController', 'Controller');
  */
 class ProjectsController extends AppController {
     
-    public $components = array('GithubApi');
+    public $components = array('GithubApi', 'Session');
 
 /**
  * index method

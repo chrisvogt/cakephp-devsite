@@ -36,7 +36,23 @@ Cache::config('gh', array(
     'path' => CACHE . 'gh' . DS,
 ));
 
-// Load Copula
+/**
+ * Site name
+ *
+ */
+Configure::write('site_name', 'CHRISVOGT.me');
+
+/**
+ * Social
+ *
+ */
+        Configure::write('social', array(
+                'twitter' => 'http://twitter.com/c1v0',
+                'github' => 'http://github.com/chrisvogt',
+                'linkedin' => 'http://linkedin.com/chr1sv0gt'
+        ));
+
+// Load DebugKit
 CakePlugin::load('DebugKit');
 
 // Load Github Plugin
