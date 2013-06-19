@@ -121,7 +121,7 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
 }
 
 /*------------------------------------------------------------------
-[ Boxes / .box ]
+[ Boxes ]
 */
 .box-small-link {
 	border: 1px solid #ddd;
@@ -257,4 +257,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
   	-webkit-border-radius: 0px 0px 2px 2px;
 	   -moz-border-radius: 0px 0px 2px 2px;
           	border-radius: 0px 0px 2px 2px;
+}
+
+/*------------------------------------------------------------------
+[ Overrides ]
+*/
+@media (max-width: 767px) {
+
+body {
+    padding: 0;
+}
+
 }

@@ -38,6 +38,7 @@ $siteDescription = __d('dev_site', 'devsite: rapid dev team site builder.');
             
             -->
             <title><?php echo $title_for_layout; ?> | <?php echo $siteDescription; ?> </title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <?php echo $this->Html->meta('icon'); ?> 
             <?php echo $this->fetch('meta'); ?> 
             <?php echo $this->Html->css('//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css'); ?> 
