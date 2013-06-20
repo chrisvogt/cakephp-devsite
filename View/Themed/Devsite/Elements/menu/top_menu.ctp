@@ -14,8 +14,8 @@
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
               <li><?php echo $this->Html->link(__('Projects'), array('controller' => 'projects', 'action' => 'index')); ?> </li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><?php echo $this->Html->link(__('About'), array('controller' => 'pages', 'action' => 'display', 'about')); ?> </li>
+              <li><?php echo $this->Html->link(__('Contact'), array('controller' => 'pages', 'action' => 'display', 'contact')); ?> </li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

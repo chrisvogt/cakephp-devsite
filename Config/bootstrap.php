@@ -41,7 +41,7 @@ Cache::config('gh', array(
  *
  */
 Configure::write('Site.site_name', 'CHRISVOGT.me');
-Configure::write('Site.headline', 'Web developer in Phoenix, AZ.');
+Configure::write('Site.headline', 'Web application developer in Phoenix, AZ.');
 
 /**
  * Social
