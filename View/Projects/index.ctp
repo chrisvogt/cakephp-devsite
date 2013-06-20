@@ -1,14 +1,19 @@
 
 <div id="page-container" class="row-fluid">
 
-    <div id="page-content" class="span12">
+    <div id="page-content" class="span8 offset2">
         <div class="projects index">
-            <h3><?php echo __('Public Projects'); ?></h3>
+            
+            <ul class="pager">
+                <li>Sort by...</li>
+                <li><?php echo $this->Paginator->sort('name', 'Name'); ?></li>
+                <li><?php echo $this->Paginator->sort('created', 'Created'); ?></li>
+            </ul>
 
             <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
                 <tr>
                     <th><?php echo $this->Paginator->sort('name'); ?></th>
-                    <th><?php echo $this->Paginator->sort('content'); ?></th>
+                    <th><?php echo __('Content'); ?></th>
                     <th><?php echo $this->Paginator->sort('created'); ?></th>
                 </tr>
                 <?php foreach ($projects as $project): ?>
