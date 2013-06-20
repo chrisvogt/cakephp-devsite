@@ -53,10 +53,9 @@ Configure::write('site_name', 'CHRISVOGT.me');
         ));
 
 // Load DebugKit
-CakePlugin::load('DebugKit');
-
-// Load Github Plugin
-# CakePlugin::load('Github');
+# CakePlugin::load('DebugKit');
+        
+CakePlugin::load('Markdown');
 
 /**
  * The settings below can be used to set additional paths to models, views and controllers.

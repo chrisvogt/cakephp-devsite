@@ -10,6 +10,8 @@ class ProjectsController extends AppController {
     public $components = array('GithubApi', 'Session');
     
     public $uses = array('Project','ProjectMetum');
+    
+    var $helpers = array('Markdown.Markdown');
 
 /**
  * index method

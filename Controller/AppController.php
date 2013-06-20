@@ -35,8 +35,6 @@ class AppController extends Controller {
     
     public $theme = "Devsite";
     
-    public $components = array('DebugKit.Toolbar');
-    
     public $scaffold;
     
 }

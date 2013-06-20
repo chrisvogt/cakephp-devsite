@@ -7,16 +7,12 @@
 
             <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
                 <tr>
-                    <th><?php echo $this->Paginator->sort('client_id'); ?></th>
                     <th><?php echo $this->Paginator->sort('name'); ?></th>
                     <th><?php echo $this->Paginator->sort('content'); ?></th>
                     <th><?php echo $this->Paginator->sort('created'); ?></th>
                 </tr>
                 <?php foreach ($projects as $project): ?>
                     <tr>
-                        <td>
-                            <?php echo $this->Html->link($project['Client']['name'], array('controller' => 'clients', 'action' => 'view', $project['Client']['id'])); ?>
-                        </td>
                         <td><?php echo $this->Html->link(h($project['Project']['name']), array('action' => 'view', $project['Project']['id'])); ?>&nbsp;</td>
                         <td><?php echo $this->Text->excerpt(h($project['Project']['content']), null); ?>&nbsp;</td>
                         <td><?php echo $this->Time->format(h($project['Project']['created'])); ?>&nbsp;</td>

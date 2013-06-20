@@ -7,7 +7,7 @@
 
             <h3><?php echo __('Project Details'); ?></h3>
             
-            <?php echo h($project['Project']['content']); ?>
+            <?php echo Markdown($project['Project']['content']); ?>
             
             <hr />
 
