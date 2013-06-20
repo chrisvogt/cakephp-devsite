@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class="box-content">
-                    <?php debug($events); ?>
+                    <?php echo $this->element('event_list') ?> 
                 </div>
             </div><!--/span-->
           </div><!--/row-->

@@ -53,7 +53,7 @@ class GithubApiComponent extends Component {
         $i = 0;
         foreach ( $result as $key => $item) {
             $acceptTypes = array('WatchEvent', 'PushEvent');
-            while ($i < $limit) {
+            if ($i < $limit) {
                 if (in_array($item['type'], $acceptTypes)) {
                     $results[] = $item;
                     $i++;
