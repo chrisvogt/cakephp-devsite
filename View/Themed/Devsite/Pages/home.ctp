@@ -20,9 +20,15 @@
                         <tbody>
                             <?php
                             foreach ($projects as $key => $project) { ?> 
+                            <?php
+                            foreach ($project['ProjectMetum'] as $metum) {
+                                if ($metum['key'] == 'last_commit') {
+                                    $lastCommit = $metum['value'];
+                                }
+                            } ?>
                             <tr>
                                 <td><?php echo $this->Html->link(__($project['Project']['name']), array('controller' => 'projects', 'action' => 'view', $project['Project']['id'])); ?> </td>
-                                <td>01/01/01</td>
+                                <td><?php echo $this->Time->niceShort($lastCommit); ?> </td>
                             </tr>
                             <?php } ?> 
                         </tbody>
