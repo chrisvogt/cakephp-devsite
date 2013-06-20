@@ -28,27 +28,28 @@
                         </tbody>
                     </table>
                     <div class="pull-right" style="margin-top:-10px;">
-                        <?php echo $this->Html->link(__('View All'), array('controller' => 'projects', 'action' => 'index'), array('class' => 'btn btn-small')); ?> 
+                        <?php echo $this->Html->link(__('View all'), array('controller' => 'projects', 'action' => 'index'), array('class' => 'btn btn-small')); ?> 
                     </div>
                     <br class="clearfix" />
                 </div>
             </div><!--/span-->
             <div class="box span4">
                 <div class="box-header navbar-inverse">
-                    <h2><i class="icon-dashboard"></i><span class="break"></span>Status</h2>
+                    <h2><i class="icon-twitter"></i><span class="break"></span>Twitter Status</h2>
                     <div class="box-icon">
                         <a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
                         <a href="#" class="btn-close"><i class="icon-remove"></i></a>
                     </div>
                 </div>
-                <div class="box-content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod auctor augue et cursus. Aliquam sed feugiat ipsum, id viverra urna. Fusce ut turpis rutrum, hendrerit mi sit amet, vestibulum orci. Suspendisse sit amet molestie elit. Pellentesque ut risus viverra, imperdiet nunc sit amet, consequat augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin adipiscing tortor nec malesuada malesuada.
+                <div class="box-content pagination-centered">
+                    <a class="twitter-timeline" href="https://twitter.com/<?php echo Configure::read('social.twitter'); ?>" data-widget-id="347514179604848641">Tweets by @<?php echo Configure::read('social.twitter'); ?></a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                     <br class="clearfix" />
                 </div>
             </div><!--/span-->
             <div class="box span4">
                 <div class="box-header">
-                    <h2><i class="icon-github"></i><span class="break"></span>Public Activity</h2>
+                    <h2><i class="icon-github"></i><span class="break"></span>Github Activity</h2>
                     <div class="box-icon">
                         <a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
                         <a href="#" class="btn-close"><i class="icon-remove"></i></a>

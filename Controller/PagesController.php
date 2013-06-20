@@ -82,7 +82,7 @@ class PagesController extends AppController {
                 if ($page == 'home') {
                     $this->loadModel('Project');
                     $this->set('projects', $this->Project->find('all'));
-                    $this->set('events', $this->GithubApi->recentEvents(array('type' => 'users', 'target' => Configure::read('social.github') . '/events/public'), 5));
+                    $this->set('events', $this->GithubApi->recentEvents(array('type' => 'users', 'target' => Configure::read('social.github') . '/events/public'), 6));
 #                    $recent_commits = $this->GithubApi->recentCommits(Configure::read('social.github'));
 #                    $this->set('commits', $recent_commits);
                 }

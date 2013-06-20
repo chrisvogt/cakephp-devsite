@@ -21,4 +21,5 @@
     </div>
 </div>
 <?php endforeach; ?>
+    <?php echo $this->Html->link('<i class="icon-github">&nbsp;</i> View all on Github', 'https://github.com/' . Configure::read('social.github') . '?tab=activity', array('class' => 'btn btn-small pull-right', 'escape' => false)); ?> 
 </div>
