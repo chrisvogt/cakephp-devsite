@@ -21,6 +21,9 @@
                             <?php
                             foreach ($projects as $key => $project) { ?> 
                             <?php
+                            /**
+                             * @todo move this to the controller, please and thank you.
+                             */
                             foreach ($project['ProjectMetum'] as $metum) {
                                 if ($metum['key'] == 'last_commit') {
                                     $lastCommit = $metum['value'];
