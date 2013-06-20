@@ -19,8 +19,10 @@ class ProjectsController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->Project->recursive = 0;
-		$this->set('projects', $this->paginate(array('Project.is_active' => true, 'Project.is_private' => false)));
+		$this->Project->recursive = -1;
+                $this->Project->contain('ProjectMetum');
+                $projects = $this->paginate(array('Project.is_active' => true, 'Project.is_private' => false));
+		$this->set('projects', $projects);
 	}
 
 /**

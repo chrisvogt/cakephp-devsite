@@ -40,7 +40,8 @@ Cache::config('gh', array(
  * Site name
  *
  */
-Configure::write('site_name', 'CHRISVOGT.me');
+Configure::write('Site.site_name', 'CHRISVOGT.me');
+Configure::write('Site.headline', 'Web developer in Phoenix, AZ.');
 
 /**
  * Social
