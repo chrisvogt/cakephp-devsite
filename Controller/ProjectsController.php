@@ -8,6 +8,8 @@ App::uses('AppController', 'Controller');
 class ProjectsController extends AppController {
     
     public $components = array('GithubApi', 'Session');
+    
+    public $uses = array('Project','ProjectMetum');
 
 /**
  * index method
@@ -30,13 +32,14 @@ class ProjectsController extends AppController {
 		if (!$this->Project->exists($id)) {
 			throw new NotFoundException(__('Invalid project'));
 		}
-		$options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
+                $options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
                 $project = $this->Project->find('first', $options);
                 $repoMeta = $this->_processRepoUrls(Set::extract('/ProjectMetum[key=repo][:first]', $project));
-                $repo = $this->GithubApi->getRepoByFullName($repoMeta['repo']);
-                $commits['count'] = count($this->GithubApi->getCommitsByFullName($repoMeta['repo']));
-                $title_for_layout = $project['Project']['name'];
-		$this->set(compact('project', 'repo', 'commits', 'title_for_layout'));
+                $this->set('events', $this->GithubApi->recentEvents(array('type' => 'repos', 'target' => $repoMeta['repo'] . '/events'), 10));
+                $details = $this->GithubApi->repoInfo($repoMeta['repo']);
+                $this->set('details', $details);
+                $lastCommit = $this->ProjectMetum->find('first', array('conditions' => array('ProjectMetum.project_id' => $id, 'ProjectMetum.key' => 'last_commit')));                
+                $this->_trackLastCommit($project, $id, $details, $lastCommit);
 	}
 
 /**
@@ -206,6 +209,10 @@ class ProjectsController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
         
+/*
+ * ------ INTERNAL METHODS & FUNCTIONS ------
+ */
+        
         private function _processRepoUrls($repo) {
             $repoUrl = Set::classicExtract($repo, '{n}.ProjectMetum.value');            
             if(isset($repoUrl[0])) {
@@ -215,6 +222,24 @@ class ProjectsController extends AppController {
             } else {
                 return false;
             }
+        }
+        
+        private function _trackLastCommit($project, $id, $details, $lastCommit) {
+                if (!$lastCommit) {
+                    $this->data = array(
+                        'id'            => null,
+                        'project_id'    => $id,
+                        'key'           => 'last_commit',
+                        'value'         => $details['pushed_at']
+                    );
+                    $this->ProjectMetum->save($this->data);
+                } elseif ($lastCommit && $lastCommit['ProjectMetum']['value'] != $details['pushed_at']) {
+                    $this->ProjectMetum->id = $lastCommit['ProjectMetum']['id'];
+                    $this->ProjectMetum->saveField('value', $details['pushed_at']);
+                }
+                
+                $title_for_layout = $project['Project']['name'];
+		$this->set(compact('project', 'repo', 'commits', 'title_for_layout'));
         }
         
 }

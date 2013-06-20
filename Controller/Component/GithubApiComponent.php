@@ -65,6 +65,12 @@ class GithubApiComponent extends Component {
         } else return false;
     }
     
+    public function repoInfo($fullname) {
+        $result = $this->_call('repos/' . $fullname);
+        $result['stats'] = $this->_call('repos/' . $fullname . '/stats/contributors');
+        return $result;
+    }
+    
 /*
  * ------ INTERNAL METHODS & FUNCTIONS ------
  */
