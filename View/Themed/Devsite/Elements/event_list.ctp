@@ -6,10 +6,11 @@
     </div>
     <div class="span11">
         <p style="padding: 6px 0; margin-left: 4px; font-size: .74em;">
+            <i><?php echo $this->Time->niceShort($event['created_at']); ?> -</i> 
             <?php echo $event['actor']['login']; ?>
             <?php echo ($event['type'] == 'PushEvent' ? 'pushed' : 'started watching'); ?> 
             <?php echo ($event['type'] == 'WatchEvent' ? $this->Html->link($event['repo']['name'], $event['repo']['url']) . '.' : '' ); ?> 
-            <?php echo ($event['type'] == 'PushEvent' ? count($event['payload']['size']) : '' ); ?>
+            <?php echo ($event['type'] == 'PushEvent' ? $event['payload']['size'] : '' ); ?>
             <?php
             if ($event['type'] == 'PushEvent' && $event['payload']['size'] = 1) {
                 echo 'commit';
