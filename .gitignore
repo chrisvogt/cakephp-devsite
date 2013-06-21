@@ -1,9 +1,11 @@
 tmp/*
 [Cc]onfig/bootstrap.php
 [Cc]onfig/database.php
+[Cc]onfig/email.php
 View/Themed/Devsite/Pages/about.ctp
 Plugin/*
 app/tmp/*
 app/[Cc]onfig/bootstrap.php
 app/[Cc]onfig/database.php
+app/[Cc]onfig/email.php
 !empty
