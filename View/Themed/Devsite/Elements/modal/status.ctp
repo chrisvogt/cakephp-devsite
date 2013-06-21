@@ -10,7 +10,7 @@
               
               <p>
                   <small>
-                      App Version: 0.1.1<br />
+                      App Version: <?php echo Configure::read('Devsite.version'); ?> <br />
                       Author: Chris Vogt (<?php echo $this->Html->link(__('@c1v0'), 'http://twitter.com/c1v0'); ?>) 
                   </small>
               </p>
