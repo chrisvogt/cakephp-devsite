@@ -45,13 +45,6 @@ Configure::write('Site', array(
 ));
 
 /**
- * Software information
- */
-Configure::write('Devsite', array(
-    'version'  => '0.1.1'
-));
-
-/**
  * Social
  *
  */
