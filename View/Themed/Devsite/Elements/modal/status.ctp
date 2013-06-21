@@ -6,10 +6,14 @@
             <h3 id="statusModalLabel">About this software</h3>
           </div>
           <div class="modal-body">
-              <p><small>App Version: 0.0.1 <span class="label label-warning">PROTOTYPE</span></small><br />
-                 <small>Server Instance: Foghorn Leghorn</small></p>
+              <p>
+                  <small>
+                      App Version: 0.1.1<br />
+                      Author: Chris Vogt (<?php echo $this->Html->link(__('@c1v0'), 'http://twitter.com/c1v0'); ?>) 
+                  </small>
+              </p>
 
-            <p>GraffitiCLIP is brought to you by the fine folks at GraffitiCLIP, LLC, and made possible by <em>Company X</em>, <em>Company Y</em>, and <em>Company Z</em>. </p>
+            <p>This project is in development, and should be considered <span class="label label-warning">unstable</span>. In the future, this modal will display status information on components and upcoming features for this project. For now, you may wish to <?php echo $this->Html->link(__('review the project on Github'), 'http://github.com/chrisvogt/cakephp-devsite'); ?>. </p>
           </div>
           <div class="modal-footer">
             <button class="btn">Learn more...</button>

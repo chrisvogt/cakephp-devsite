@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <?php echo $this->Html->link('<i class="icon-code icon-white">&nbsp;</i> ' . Configure::read('Site.site_name'), '/', array('class' => 'brand', 'escape' => false)); ?> 
+              <?php echo $this->Html->link('<i class="icon-code icon-white">&nbsp;</i> ' . Configure::read('Site.name'), '/', array('class' => 'brand', 'escape' => false)); ?> 
               <div class="nav-collapse collapse">
                 <?php echo $this->element('menu/login_logout'); ?> 
                 <ul class="nav">

@@ -37,21 +37,30 @@ Cache::config('gh', array(
 ));
 
 /**
- * Site name
- *
+ * Site information
  */
-Configure::write('Site.site_name', 'CHRISVOGT.me');
-Configure::write('Site.headline', 'Web application developer in Phoenix, AZ.');
+Configure::write('Site', array(
+    'name'      => 'CHRISVOGT.me',
+    'headline'  => 'Web application developer in Phoenix, AZ.'
+));
+
+/**
+ * Software information
+ */
+Configure::write('Devsite', array(
+    'version'  => '0.1.1'
+));
 
 /**
  * Social
  *
  */
-        Configure::write('social', array(
-                'twitter' => 'c1v0',
-                'github' => 'chrisvogt',
-                'linkedin' => 'chr1sv0gt'
-        ));
+Configure::write('social', array(
+        'twitter' => 'c1v0',
+        'github' => 'chrisvogt',
+        'linkedin' => 'chr1sv0gt',
+        'email'     => 'mail@chrisvogt.me'
+));
         
 Configure::write('Recaptcha.publicKey', '6LerIuMSAAAAAMJ3cLm5wU2BhgFB-1mLclTVmbKE');
 Configure::write('Recaptcha.privateKey', '6LerIuMSAAAAADA2l-jUUKBvPqynitXd75sktZDS');
