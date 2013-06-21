@@ -11,8 +11,12 @@ class ProjectsController extends AppController {
     
     public $uses = array('Project','ProjectMetum');
     
-    var $helpers = array('Markdown.Markdown');
+    public $helpers = array('Markdown.Markdown');
 
+    public function beforeFilter() {
+        $this->Auth->allow('index', 'view');
+    }
+    
 /**
  * index method
  *

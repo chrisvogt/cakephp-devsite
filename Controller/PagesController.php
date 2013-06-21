@@ -53,7 +53,14 @@ class PagesController extends AppController {
  */
 	public $components = array('GithubApi', 'Recaptcha.Recaptcha');
 
-        
+/**
+ * beforeFilter
+ * 
+ */
+        public function beforeFilter() {
+            $this->Auth->allow();
+        }
+    
 /**
  * Displays a view
  *

@@ -37,4 +37,22 @@ class AppController extends Controller {
     
     public $scaffold;
     
+    // Pass settings in $components array
+    public $components = array(
+        'Auth' => array(
+            'loginAction' => array('controller' => 'users','action' => 'login'),
+            'loginRedirect'     => array('controller' => 'users', 'action' => 'dashboard'),
+            'logoutRedirect'    => '/',
+            'authError' => 'You must be authorized to access this location.',
+            'authenticate' => array(
+                'Form' => array(
+                    'fields' => array('username' => 'email')
+                )
+            ),
+            'authorize' => array(
+                'Actions' => array('actionPath' => 'controllers')
+            )
+        ),
+        'Session'
+    );
 }
