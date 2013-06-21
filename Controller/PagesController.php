@@ -51,7 +51,7 @@ class PagesController extends AppController {
  *
  * @var array
  */
-	public $components = array('GithubApi');
+	public $components = array('GithubApi', 'Recaptcha.Recaptcha');
 
         
 /**
@@ -90,4 +90,5 @@ class PagesController extends AppController {
 		$this->set(compact('page', 'subpage', 'title_for_layout'));
 		$this->render(implode('/', $path));
 	}
+        
 }

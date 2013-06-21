@@ -19,11 +19,7 @@
                                         </tr>
                                     </thead>
                                     <tbody> <?php 
-                                    foreach ($projects as $key => $project) { ?> 
-                                            <?php
-                                            /**
-                                             * @todo move this to the controller, please and thank you.
-                                             */
+                                    foreach ($projects as $key => $project) { /** @todo Move logic to controller */
                                             foreach ($project['ProjectMetum'] as $metum) {
                                                 if ($metum['key'] == 'last_commit') {
                                                     $lastCommit = $metum['value'];
@@ -31,14 +27,14 @@
                                             } ?>  
                                         <tr>
                                             <td><?php echo $this->Html->link(__($project['Project']['name']), array('controller' => 'projects', 'action' => 'view', $project['Project']['id'])); ?> </td>
-                                            <td><?php echo $this->Time->niceShort($lastCommit); ?> </td>
+                                            <td><?php echo $this->Time->timeAgoInWords($lastCommit); ?> </td>
                                         </tr>
                                         <?php } ?> 
                                     </tbody>
                                 </table>
                                 <div class="pull-right" style="margin-top:-10px;">
                                     <?php echo $this->Html->link(__('View all'), array('controller' => 'projects', 'action' => 'index'), array('class' => 'btn btn-small')); ?> 
-                                </div><
+                                </div>
                                 <br class="clearfix" />
                             </div>
                         </div><!--/span-->

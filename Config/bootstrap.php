@@ -52,12 +52,16 @@ Configure::write('Site.headline', 'Web application developer in Phoenix, AZ.');
                 'github' => 'chrisvogt',
                 'linkedin' => 'chr1sv0gt'
         ));
+        
+Configure::write('Recaptcha.publicKey', '6LerIuMSAAAAAMJ3cLm5wU2BhgFB-1mLclTVmbKE');
+Configure::write('Recaptcha.privateKey', '6LerIuMSAAAAADA2l-jUUKBvPqynitXd75sktZDS');
 
 // Load DebugKit
 # CakePlugin::load('DebugKit');
         
 CakePlugin::load('Markdown');
-
+CakePlugin::load('Postmark');
+CakePlugin::load('Recaptcha');
 CakePlugin::load('DpSocialTimeline');
 
 /**

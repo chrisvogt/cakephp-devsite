@@ -19,7 +19,7 @@
                 <?php foreach ($projects as $project): ?>
                     <tr>
                         <td><?php echo $this->Html->link(h($project['Project']['name']), array('action' => 'view', $project['Project']['id'])); ?>&nbsp;</td>
-                        <td><?php echo $this->Text->excerpt(h($project['Project']['content']), null); ?>&nbsp;</td>
+                        <td><?php echo h($project['Project']['content']); ?>&nbsp;</td>
                         <td><?php echo $this->Time->format(h($project['Project']['created'])); ?>&nbsp;</td>
                     </tr>
                 <?php endforeach; ?>

@@ -198,4 +198,5 @@ class UsersController extends AppController {
 		$this->Session->setFlash(__('User was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
+
 }
