@@ -68,12 +68,13 @@ $siteDescription = __d('dev_site', 'devsite: rapid dev team site builder.');
 
         <?php echo $this->Html->script('libs/jquery'); ?> 
         <?php echo $this->Html->script('libs/bootstrap.min'); ?> 
-
+        
         <!-- Le fav and touch icons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="#">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="#">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="#">
-        <link rel="apple-touch-icon-precomposed" href="#">
+        <?php echo $this->Html->meta('icon', $this->Html->url('/theme/Devsite/favicon.ico')); ?> 
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $this->Html->url('/theme/Devsite/img/icon/touch144.png'); ?>" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $this->Html->url('/theme/Devsite/img/icon/touch114.png'); ?>" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $this->Html->url('/theme/Devsite/img/icon/touch72.png'); ?>" />
+        <link rel="apple-touch-icon-precomposed" href="<?php echo $this->Html->url('/theme/Devsite/img/icon/touch.png'); ?>" />
         <link rel="shortcut icon" href="#">
     </head>
     <body>
