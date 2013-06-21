@@ -58,6 +58,8 @@ Configure::write('Site.headline', 'Web application developer in Phoenix, AZ.');
         
 CakePlugin::load('Markdown');
 
+CakePlugin::load('DpSocialTimeline');
+
 /**
  * The settings below can be used to set additional paths to models, views and controllers.
  *

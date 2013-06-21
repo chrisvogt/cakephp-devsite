@@ -47,6 +47,8 @@ $siteDescription = __d('dev_site', 'devsite: rapid dev team site builder.');
             <?php echo $this->Html->css('http://fonts.googleapis.com/css?family=Titillium+Web:400,300,400italic,700'); ?> 
             <?php echo $this->Html->css('core'); ?> 
             <?php echo $this->Html->css('devsite'); ?> 
+            <?php echo $this->Html->css('/DpSocialTimeline/css/colorbox.css'); ?>
+            <?php echo $this->Html->css('/DpSocialTimeline/css/dpSocialTimeline.css'); ?>
             <?php echo $this->fetch('css'); ?> 
 
             <style type="text/css">
@@ -102,6 +104,52 @@ $siteDescription = __d('dev_site', 'devsite: rapid dev team site builder.');
                     </div>
 		</div><!-- .container -->
 		
+                
+                <script type="text/javascript">
+		// <![CDATA[
+		jQuery(document).ready(function() {
+			
+			jQuery("#socialTimeline").dpSocialTimeline({
+				
+				feeds: 
+				{
+                                    "dribbble": {data: "artinreality", limit: "5"},
+                                    "tumblr": {data: "chrisvogt", limit: "5"}
+				},
+				custom: 
+				{	
+                                    "StumbleUpon": {name: "StumbleUpon", url: "http://www.stumbleupon.com/rss/stumbler/chr1sv0gt/likes", icon: "http://www.mylocally.com/images/stumbleupon16x16.gif", limit: "30"},
+                                    "Github": {name: "Github", url: "https://github.com/chrisvogt.atom", icon: "http://www.trevorbedford.com/images/github.png", limit: "3"}
+				},
+				layoutMode: "columns",
+				addColorbox: 0,
+				showSocialIcons: 1,
+				showFilter: 1,
+				showLayout: 0,
+				total: 99,
+				itemWidth: "220",
+				skin: "light",
+				lang_week: "week",
+				lang_weeks: "weeks",
+				lang_day: "day",
+				lang_days: "days",
+				lang_hour: "hour",
+				lang_hours: "hours",
+				lang_minute: "minute",
+				lang_minutes: "minutes",
+				lang_about: "about",
+				lang_ago: "ago",
+				lang_less: "Less than a minute ago",
+				nonce: "dp_timeline_id568482929"
+			});
+			
+		});
+		
+		//]]>
+                </script>
+                <?php echo $this->Html->script('/DpSocialTimeline/js/jquery.colorbox.min.js'); ?> 
+                <?php echo $this->Html->script('/DpSocialTimeline/js/jquery.isotope.min.js'); ?> 
+                <?php echo $this->Html->script('/DpSocialTimeline/js/jquery.dpSocialTimeline.min.js'); ?> 
                 <?php echo $this->fetch('script'); ?> 
 	</body>
 </html>

@@ -70,4 +70,18 @@
             </div><!--/span-->
           </div><!--/row-->
         </div><!--/span-->
+        <div class="row-fluid">
+            <div class="box span12">
+                <div class="box-header">
+                    <h2><i class="icon-github"></i><span class="break"></span>Recent Activity</h2>
+                    <div class="box-icon">
+                        <a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+                        <a href="#" class="btn-close"><i class="icon-remove"></i></a>
+                    </div>
+                </div>
+                <div class="box-content">
+                    <div id="socialTimeline" style="width:100%;"></div>
+                </div>
+            </div><!--/.box.span12-->
+        </div>
       </div><!--/row-->
