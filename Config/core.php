@@ -43,7 +43,7 @@
  * Software information
  */
         Configure::write('Devsite', array(
-            'version'  => '0.2.0'
+            'version'  => '0.2.2'
         ));
         
 
