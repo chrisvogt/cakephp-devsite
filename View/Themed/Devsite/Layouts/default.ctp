@@ -37,6 +37,8 @@ $siteDescription = __d('dev_site', 'devsite: rapid dev team site builder.');
         -->
         
         <title><?php echo $title_for_layout; ?> | <?php echo $siteDescription; ?> </title>
+        
+        <?php if (isset($description_for_layout) && !empty($description_for_layout)) echo $this->Html->meta('description', $description_for_layout); ?> 
         <?php echo $this->Html->meta('viewport', null, array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1.0')); ?> 
         <?php echo $this->Html->meta('icon'); ?> 
         <?php echo $this->fetch('meta'); ?> 
@@ -47,8 +49,8 @@ $siteDescription = __d('dev_site', 'devsite: rapid dev team site builder.');
         <?php echo $this->Html->css('http://fonts.googleapis.com/css?family=Titillium+Web:400,300,400italic,700'); ?> 
         <?php echo $this->Html->css('core'); ?> 
         <?php echo $this->Html->css('devsite'); ?> 
-        <?php if ($this->params->here === '/') echo $this->Html->css('/DpSocialTimeline/css/colorbox.css'); ?>
-        <?php if ($this->params->here === '/') echo $this->Html->css('/DpSocialTimeline/css/dpSocialTimeline.css'); ?>
+        <?php if ($this->params->here === '/') echo $this->Html->css('/DpSocialTimeline/css/colorbox.css'); ?> 
+        <?php if ($this->params->here === '/') echo $this->Html->css('/DpSocialTimeline/css/dpSocialTimeline.css'); ?> 
         <?php echo $this->fetch('css'); ?> 
 
         <style type="text/css">
@@ -99,7 +101,7 @@ $siteDescription = __d('dev_site', 'devsite: rapid dev team site builder.');
         </div><!-- #content .container-fluid -->
         
         <?php if ($this->params->here === '/') echo $this->element('modal/status'); ?> 
-
+        <?php if ($_SERVER['SERVER_NAME'] == 'chrisvogt.me' || $_SERVER['SERVER_NAME'] == 'chrisvogt.local' || $_SERVER['SERVER_NAME'] == 'www.chrisvogt.me') echo $this->element('analytics'); ?> 
         <?php echo $this->Js->writeBuffer(array('inline' => true, 'safe' => true)); ?>                    
         <?php echo $this->fetch('script'); ?> 
     </body>

@@ -27,6 +27,7 @@ class ProjectsController extends AppController {
                 $this->Project->contain('ProjectMetum');
                 $projects = $this->_trimProjectDescription($this->paginate(array('Project.is_active' => true, 'Project.is_private' => false)));
                 $this->set('projects', $projects);
+                $this->set('description_for_layout', 'Browse a collection of my public projects, open source PHP applications, and free themes.');
 	}
 
 /**
@@ -46,6 +47,7 @@ class ProjectsController extends AppController {
                 $this->set('events', $this->GithubApi->recentEvents(array('type' => 'repos', 'target' => $repoMeta['repo'] . '/events'), 10));
                 $details = $this->GithubApi->repoInfo($repoMeta['repo']);
                 $this->set('details', $details);
+                $this->set('description_for_layout', 'Project details for ' . $project['Project']['name']); 
                 $lastCommit = $this->ProjectMetum->find('first', array('conditions' => array('ProjectMetum.project_id' => $id, 'ProjectMetum.key' => 'last_commit')));                
                 $this->_trackLastCommit($project, $id, $details, $lastCommit);
 	}
