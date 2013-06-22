@@ -37,7 +37,11 @@
         
         <title><?php echo $title_for_layout; ?> | <?php echo $siteDescription; ?> </title>
         
-        <?php if (isset($description_for_layout) && !empty($description_for_layout)) echo $this->Html->meta('description', $description_for_layout); ?> 
+        <?php if (isset($description_for_layout) && !empty($description_for_layout)) echo $this->Html->meta('description', $description_for_layout); ?>
+        
+        <?php echo $this->Html->meta('og:title', null, array('title' => 'og:title', 'content' => $title_for_layout . ' | ' . Configure::read('Site.name') . ' ' . Configure::read('Site.headline'))); ?> 
+        <?php if (isset($description_for_layout) && !empty($description_for_layout)) echo $this->Html->meta(array('title' => 'og:description', 'content' => $description_for_layout)); ?> 
+        <meta title="og:image" content="<?php echo $this->Html->url('/theme/Devsite/img/icon/touch144.png'); ?>" />
         <?php echo $this->Html->meta('viewport', null, array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1.0')); ?> 
         <?php echo $this->Html->meta('icon'); ?> 
         <?php echo $this->fetch('meta'); ?> 
