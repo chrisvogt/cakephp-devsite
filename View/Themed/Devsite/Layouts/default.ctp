@@ -15,7 +15,6 @@
  * @since         CakePHP(tm) v 0.10.0.1076
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-$siteDescription = __d('dev_site', 'devsite: rapid dev team site builder.');
 ?>
 <?php echo $this->Html->docType('html5'); ?> 
 <html>

@@ -55,4 +55,8 @@ class AppController extends Controller {
         ),
         'Session'
     );
+    
+    public function beforeRender() {
+        $this->set('siteDescription', 'PHP web application developer in Phoenix, Arizona.');
+    }
 }
