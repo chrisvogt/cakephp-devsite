@@ -110,7 +110,7 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
 }
 
 /*------------------------------------------------------------------
-[ Social Pane ]
+[ Panes ]
 */
 .pane-social {
     padding: 14px 0;
@@ -118,6 +118,20 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
     background-color: #fefefe;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #ddd;
+}
+.well-login {
+    display: relative;
+    background: url(../img/pattern/square_bg.png) repeat center center;
+    border-top: 1px solid #eaeaea;
+    border-left: 1px solid #eaeaea;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #bbb;
+  	-webkit-box-shadow: 3px 5px 4px #efefef;
+       -moz-box-shadow: 3px 5px 4px #efefef;
+        box-shadow: 3px 5px 4px #efefef;
+  	-webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+        border-radius: 10px;
 }
 
 /*------------------------------------------------------------------

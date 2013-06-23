@@ -94,15 +94,16 @@
 
             <?php echo $this->fetch('content'); ?> 
 
-            <hr>
-
             <!-- Footer
             ================================================== -->
             <footer>
+            <div class="row-fluid">
+                <hr />
                 <p>
                     &copy; 2013 Chris Vogt<br />
                     Designed & Developed by Chris Vogt | Powered by <?php echo $this->Html->link('CakePHP', 'http://cakephp.org'); ?> 
                 </p>
+            </div>
             </footer>
         </div><!-- #content .container-fluid -->
         

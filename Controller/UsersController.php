@@ -46,6 +46,8 @@ class UsersController extends AppController {
                 } else {
                     $this->Session->setFlash(__('Invalid username or password, try again'), 'flash/error');
                 }
+            } else {
+                $this->set('title_for_layout', 'Sign in to ' . Configure::read('Site.name'));
             }
         }
 
