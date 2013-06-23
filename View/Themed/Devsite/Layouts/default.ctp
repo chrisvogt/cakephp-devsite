@@ -99,7 +99,10 @@
             <!-- Footer
             ================================================== -->
             <footer>
-                <p>&copy; 2013 C1V0</p>
+                <p>
+                    &copy; 2013 Chris Vogt<br />
+                    Designed & Developed by Chris Vogt | Powered by <?php echo $this->Html->link('CakePHP', 'http://cakephp.org'); ?> 
+                </p>
             </footer>
         </div><!-- #content .container-fluid -->
         
