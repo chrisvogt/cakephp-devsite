@@ -77,14 +77,14 @@
                 <div class="row-fluid">
                     <div class="box span12">
                         <div class="box-header">
-                            <h2><i class="icon-rss"></i><span class="break"></span>Recent Activity</h2>
+                            <h2><i class="icon-rss"></i><span class="break"></span>Following & Reading</h2>
                             <div class="box-icon">
                                 <a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
                                 <a href="#" class="btn-close"><i class="icon-remove"></i></a>
                             </div><!-- /.box-icon -->
                         </div><!-- /.box-header -->
                         <div class="box-content">
-                            <div id="socialTimeline" style="width:100%;"></div>
+                            <div id="socialTimeline"></div>
                         </div><!-- /.box-content -->
                     </div><!-- /.box.span12 -->
                 </div><!--/.row-fluid -->
@@ -97,23 +97,17 @@
                 jQuery(document).ready(function() {
 
                     jQuery("#socialTimeline").dpSocialTimeline({
-                        feeds:
-                                {
-                                    "dribbble": {data: "artinreality", limit: "5"},
-                                    "tumblr": {data: "chrisvogt", limit: "5"}
-                                },
                         custom:
                                 {
-                                    "StumbleUpon": {name: "StumbleUpon", url: "http://www.stumbleupon.com/rss/stumbler/chr1sv0gt/likes", icon: "http://www.mylocally.com/images/stumbleupon16x16.gif", limit: "30"},
-                                    "Github": {name: "Github", url: "https://github.com/chrisvogt.atom", icon: "http://www.trevorbedford.com/images/github.png", limit: "3"}
+                                    "StumbleUpon": {name: "StumbleUpon", url: "http://www.stumbleupon.com/rss/stumbler/chr1sv0gt/likes", icon: "http://www.mylocally.com/images/stumbleupon16x16.gif", limit: "10"}
                                 },
                         layoutMode: "columns",
                         addColorbox: 0,
                         showSocialIcons: 1,
-                        showFilter: 1,
+                        showFilter: 0,
                         showLayout: 0,
-                        total: 99,
-                        itemWidth: "220",
+                        total: 10,
+                        itemWidth: "180",
                         skin: "light",
                         lang_week: "week",
                         lang_weeks: "weeks",
