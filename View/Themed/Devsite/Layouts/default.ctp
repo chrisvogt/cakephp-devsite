@@ -70,9 +70,6 @@
                 }
             }
         </style>
-
-        <?php echo $this->Html->script('libs/jquery'); ?> 
-        <?php echo $this->Html->script('libs/bootstrap.min'); ?> 
         
         <!-- Le fav and touch icons -->
         <?php echo $this->Html->meta('icon', $this->Html->url('/theme/Devsite/favicon.ico')); ?> 
@@ -109,7 +106,9 @@
         
         <?php if ($this->params->here === '/') echo $this->element('modal/status'); ?> 
         <?php if ($_SERVER['SERVER_NAME'] == 'chrisvogt.me' || $_SERVER['SERVER_NAME'] == 'chrisvogt.local' || $_SERVER['SERVER_NAME'] == 'www.chrisvogt.me') echo $this->element('analytics'); ?> 
-        <?php echo $this->Js->writeBuffer(array('inline' => true, 'safe' => true)); ?>                    
+        <?php echo $this->Js->writeBuffer(array('inline' => true, 'safe' => true)); ?> 
+        <?php echo $this->Html->script('libs/jquery'); ?> 
+        <?php echo $this->Html->script('libs/bootstrap.min'); ?> 
         <?php echo $this->fetch('script'); ?> 
     </body>
 </html>

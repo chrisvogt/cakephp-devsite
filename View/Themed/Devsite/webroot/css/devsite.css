@@ -133,6 +133,9 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
        -moz-border-radius: 10px;
         border-radius: 10px;
 }
+.list-skills li {
+    margin: 4px;
+}
 
 /*------------------------------------------------------------------
 [ Boxes ]
