@@ -78,6 +78,9 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $this->Html->url('/theme/Devsite/img/icon/touch72.png'); ?>" />
         <link rel="apple-touch-icon-precomposed" href="<?php echo $this->Html->url('/theme/Devsite/img/icon/touch.png'); ?>" />
         <link rel="shortcut icon" href="#">
+        
+        <?php echo $this->Html->script('libs/jquery'); ?> 
+        <?php echo $this->Html->script('libs/bootstrap.min'); ?> 
     </head>
     <body>
         <?php echo $this->element('menu/top_menu'); ?>
@@ -107,8 +110,6 @@
         <?php if ($this->params->here === '/') echo $this->element('modal/status'); ?> 
         <?php if ($_SERVER['SERVER_NAME'] == 'chrisvogt.me' || $_SERVER['SERVER_NAME'] == 'chrisvogt.local' || $_SERVER['SERVER_NAME'] == 'www.chrisvogt.me') echo $this->element('analytics'); ?> 
         <?php echo $this->Js->writeBuffer(array('inline' => true, 'safe' => true)); ?> 
-        <?php echo $this->Html->script('libs/jquery'); ?> 
-        <?php echo $this->Html->script('libs/bootstrap.min'); ?> 
         <?php echo $this->fetch('script'); ?> 
     </body>
 </html>
