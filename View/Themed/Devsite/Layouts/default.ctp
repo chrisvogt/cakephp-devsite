@@ -51,9 +51,9 @@
         <?php echo $this->Html->css('//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css'); ?>  
         <?php echo $this->Html->css('http://fonts.googleapis.com/css?family=Titillium+Web:400,300,400italic,700'); ?> 
         <?php echo $this->Html->css('core'); ?> 
-        <?php echo $this->Html->css('devsite'); ?> 
-        <?php if ($this->params->here === '/') echo $this->Html->css('/DpSocialTimeline/css/colorbox.css'); ?> 
-        <?php if ($this->params->here === '/') echo $this->Html->css('/DpSocialTimeline/css/dpSocialTimeline.css'); ?> 
+        <?php echo $this->Html->css('devsite'); ?>
+        <?php if ($this->params->here === '/') echo $this->Html->css('/DpSocialTimeline/css/dpSocialTimeline.css'); ?>  
+        <?php if ($this->params->here === '/projects') echo $this->Html->css('/GithubRepoWidget/css/githubRepoWidget.css'); ?> 
         <?php echo $this->fetch('css'); ?> 
 
         <style type="text/css">
@@ -79,8 +79,8 @@
         <link rel="apple-touch-icon-precomposed" href="<?php echo $this->Html->url('/theme/Devsite/img/icon/touch.png'); ?>" />
         <link rel="shortcut icon" href="#">
         
-        <?php echo $this->Html->script('libs/jquery'); ?> 
-        <?php echo $this->Html->script('libs/bootstrap.min'); ?> 
+        <?php echo $this->Html->script('http://code.jquery.com/jquery-1.10.1.min.js', array('inline' => false)); ?> 
+        <?php echo $this->Html->script('libs/bootstrap.min', array('inline' => false)); ?> 
     </head>
     <body>
         <?php echo $this->element('menu/top_menu'); ?>
@@ -109,7 +109,48 @@
         
         <?php if ($this->params->here === '/') echo $this->element('modal/status'); ?> 
         <?php if ($_SERVER['SERVER_NAME'] == 'chrisvogt.me' || $_SERVER['SERVER_NAME'] == 'chrisvogt.local' || $_SERVER['SERVER_NAME'] == 'www.chrisvogt.me') echo $this->element('analytics'); ?> 
+        
+        <!-- Le javascript
+        ================================================== -->    
         <?php echo $this->Js->writeBuffer(array('inline' => true, 'safe' => true)); ?> 
         <?php echo $this->fetch('script'); ?> 
+        <?php echo $this->fetch('scriptBottom'); ?> 
+        <?php if ($this->params->here === '/') { ?> 
+        <script type="text/javascript">
+            // <![CDATA[
+            jQuery(document).ready(function() {
+
+                jQuery("#socialTimeline").dpSocialTimeline({
+                    custom:
+                            {
+                                "StumbleUpon": {name: "StumbleUpon", url: "http://www.stumbleupon.com/rss/stumbler/chr1sv0gt/likes", icon: "http://www.mylocally.com/images/stumbleupon16x16.gif", limit: "10"}
+                            },
+                    layoutMode: "columns",
+                    addColorbox: 0,
+                    showSocialIcons: 1,
+                    showFilter: 0,
+                    showLayout: 0,
+                    total: 10,
+                    itemWidth: "180",
+                    skin: "light",
+                    lang_week: "week",
+                    lang_weeks: "weeks",
+                    lang_day: "day",
+                    lang_days: "days",
+                    lang_hour: "hour",
+                    lang_hours: "hours",
+                    lang_minute: "minute",
+                    lang_minutes: "minutes",
+                    lang_about: "about",
+                    lang_ago: "ago",
+                    lang_less: "Less than a minute ago",
+                    nonce: "dp_timeline_id568482929"
+                });
+
+            });
+
+            //]]>
+        </script>
+        <?php } ?> 
     </body>
 </html>

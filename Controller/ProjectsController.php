@@ -11,7 +11,7 @@ class ProjectsController extends AppController {
     
     public $uses = array('Project','ProjectMetum');
     
-    public $helpers = array('Markdown.Markdown');
+    public $helpers = array('Markdown.Markdown', 'GithubRepoWidget.GithubRepo');
 
     public function beforeFilter() {
         $this->Auth->allow('index', 'view');
@@ -24,10 +24,10 @@ class ProjectsController extends AppController {
  */
 	public function index() {
 		$this->Project->recursive = -1;
-                $this->Project->contain('ProjectMetum');
-                $projects = $this->_trimProjectDescription($this->paginate(array('Project.is_active' => true, 'Project.is_private' => false)));
-                $this->set('projects', $projects);
-                $this->set('description_for_layout', 'Browse a collection of my public projects, open source PHP applications, and free themes.');
+        $this->Project->contain('ProjectMetum');
+        $projects = $this->_trimProjectDescription($this->paginate(array('Project.is_active' => true, 'Project.is_private' => false)));
+        $this->set('projects', $projects);
+        $this->set('description_for_layout', 'Browse a collection of my public projects, open source PHP applications, and free themes.');
 	}
 
 /**

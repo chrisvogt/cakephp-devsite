@@ -92,41 +92,5 @@
 
             <!-- Le javascript
             ================================================== -->
-            <script type="text/javascript">
-                // <![CDATA[
-                jQuery(document).ready(function() {
-
-                    jQuery("#socialTimeline").dpSocialTimeline({
-                        custom:
-                                {
-                                    "StumbleUpon": {name: "StumbleUpon", url: "http://www.stumbleupon.com/rss/stumbler/chr1sv0gt/likes", icon: "http://www.mylocally.com/images/stumbleupon16x16.gif", limit: "10"}
-                                },
-                        layoutMode: "columns",
-                        addColorbox: 0,
-                        showSocialIcons: 1,
-                        showFilter: 0,
-                        showLayout: 0,
-                        total: 10,
-                        itemWidth: "180",
-                        skin: "light",
-                        lang_week: "week",
-                        lang_weeks: "weeks",
-                        lang_day: "day",
-                        lang_days: "days",
-                        lang_hour: "hour",
-                        lang_hours: "hours",
-                        lang_minute: "minute",
-                        lang_minutes: "minutes",
-                        lang_about: "about",
-                        lang_ago: "ago",
-                        lang_less: "Less than a minute ago",
-                        nonce: "dp_timeline_id568482929"
-                    });
-
-                });
-
-                //]]>
-            </script>
-            <?php echo $this->Html->script('/DpSocialTimeline/js/jquery.colorbox.min.js'); ?> 
-            <?php echo $this->Html->script('/DpSocialTimeline/js/jquery.isotope.min.js'); ?> 
-            <?php echo $this->Html->script('/DpSocialTimeline/js/jquery.dpSocialTimeline.min.js'); ?> 
+            <?php echo $this->Html->script('/DpSocialTimeline/js/jquery.isotope.min.js', array('inline' => false, 'block' => 'scriptBottom')); ?> 
+            <?php echo $this->Html->script('/DpSocialTimeline/js/jquery.dpSocialTimeline.min.js', array('inline' => false, 'block' => 'scriptBottom')); ?> 

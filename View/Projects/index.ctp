@@ -44,5 +44,7 @@
                 </ul>
             </div><!-- .pagination -->
         </div><!-- .index -->
+        <?php echo $this->GithubRepo->widget('chrisvogt/cakephp-devsite'); ?> 
     </div><!-- #page-content .span9 -->
 </div><!-- #page-container .row-fluid -->
+<?php echo $this->Html->script('/GithubRepoWidget/js/jquery.githubRepoWidget.min.js', array('inline' => false, 'block' => 'scriptBottom')); ?> 
