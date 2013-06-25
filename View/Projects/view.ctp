@@ -41,10 +41,10 @@
                     </tr>
                     <?php } ?>
                     <tr>
-                        <td><i class="icon-calendar">&nbsp;</i> Created: <?php echo h($this->Time->nice($details['created_at'])); ?></td>
+                        <td><i class="icon-calendar">&nbsp;</i> Created: <?php echo h($this->Time->format('F jS, Y', $details['created_at'])); ?></td>
                     </tr>
                     <tr>
-                        <td><i class="icon-calendar-empty">&nbsp;</i> Last commit: <?php echo h($this->Time->timeAgoInWords($details['pushed_at'])); ?></td>
+                        <td><i class="icon-calendar-empty">&nbsp;</i> Last commit: <?php echo h($this->Time->format("m/d/y", $details['pushed_at'])); ?></td>
                     </tr>
                     <tr>
                         <td><i class="icon-github-sign">&nbsp;</i> Repository: <?php echo $this->Html->link($details['name'], $details['html_url']); ?> </td>
