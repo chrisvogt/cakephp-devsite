@@ -120,8 +120,6 @@ class GithubApiComponent extends Component {
                 'User-Agent' => Configure::read('social.github')
             )
         );
-#        $path .= $this->_paginationSettings($args);
-        
         $sanitizedPath = str_replace('/', '-', strtolower($path));
         $result = Cache::read($sanitizedPath, 'gh');
         if(!$result) {
@@ -145,92 +143,5 @@ class GithubApiComponent extends Component {
     private function _createConsumer() {
         return new HttpSocket();
     }
-    
-/*
- * ------ FIRST PASS, throwaway code ------
- */
-    
-    /*
-    public function getRepoByFullName($fullName = null) {
-        if (!isset($fullName)) {
-            return false;
-        }
-        $cleanName = Sanitize::paranoid($fullName);
-        $sock = new HttpSocket();
-        $result = Cache::read($cleanName, 'gh');
-        if (!$result) {
-            $response = $sock->get($this->apiPath . 'repos/' . $fullName);
-            Cache::write($cleanName, $response->body, 'gh');
-            $result = $response->body;
-        }
-        $decode = json_decode($result, true);
-        
-        return $decode;
-    }
-
-    public function getCommitsByFullName($fullName = null) {
-        if (!isset($fullName)) {
-            return false;
-        }
-        $cleanName = Sanitize::paranoid($fullName) . '-commits';
-        $sock = new HttpSocket();
-        $result = Cache::read($cleanName, 'gh');
-        if (!$result) {
-            $response = $sock->get($this->apiPath . 'repos/' . $fullName . '/commits');
-            Cache::write($cleanName, $response->body, 'gh');
-            $result = $response->body;
-        }
-        $decode = json_decode($result, true);
-        
-        return $decode;
-    }
-    
-    public function getUserInfo($username = null) {
-        if (!isset($username)) {
-            throw new Exception('A valid Github username is required. You tried: ' . $username, $code, $previous);
-        }
-        $sock = new HttpSocket();
-        $result = Cache::read($username, 'gh');
-        if (!$result) {
-            $response = $sock->get($this->apiPath . 'users/' . $username);
-            Cache::write($username, $response->body, 'gh');
-            $result = $response->body;
-        }
-        $decode = json_decode($result, true);
-        
-        return $decode;
-    }
-    
-    
-    public function getUserEvents($username = null) {
-        if (!isset($username)) {
-            throw new Exception('A valid Github username is required. You tried: ' . $username, $code, $previous);
-        }
-        $sock = new HttpSocket();
-        $result = Cache::read($username . '-events', 'gh');
-        if (!$result) {
-            $response = $sock->get($this->apiPath . 'users/' . $username . '/events');
-            Cache::write($username . '-events', $response->body, 'gh');
-            $result = $response->body;
-        }
-        $decode = json_decode($result, true);
-        
-        return $decode;
-    }
-    
-    public function filterEvents($events = array(), $type = 'PushEvent') {
-        if (!is_array($events)) {
-            throw new Exception('Invalid Github event data passed to function.', $code, $previous);
-        }
-        $array = array();
-        foreach ($events as $key => $event) {
-            if ($event['type'] == $type) {
-                $array[] = $event;
-            }
-            return $array;
-        }
-    }
-     * 
-     */
     
 }

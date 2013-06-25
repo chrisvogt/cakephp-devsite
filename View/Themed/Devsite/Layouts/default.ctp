@@ -101,7 +101,7 @@
                 <hr />
                 <p>
                     &copy; 2013 Chris Vogt<br />
-                    Designed & Developed by Chris Vogt | Powered by <?php echo $this->Html->link('CakePHP', 'http://cakephp.org'); ?> 
+                    Powered by <?php echo $this->Html->link('CakePHP', 'http://cakephp.org'); ?> and <?php echo $this->Html->link('CakePHP Devsite', 'http://github.com/chrisvogt/cakephp-devsite'); ?> 
                 </p>
             </div>
             </footer>
