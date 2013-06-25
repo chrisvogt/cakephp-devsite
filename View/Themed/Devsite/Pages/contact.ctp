@@ -3,16 +3,15 @@
         <div class="row-fluid">
             <div class="box span4">
                 <div class="box-header">
-                    <h2><i class="icon-user"></i><span class="break"></span>Profile Photo</h2>
+                    <h2><i class="icon-user"></i><span class="break"></span>Contact Overview</h2>
                     <div class="box-icon">
-                        <a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+                        <a href="#" class="btn-minimize" data-toggle="collapse" data-target="#box-contact"><i class="icon-chevron-up"></i></a>
                         <a href="#" class="btn-close"><i class="icon-remove"></i></a>
                     </div><!-- /.box-icon -->
                 </div><!-- /.box-header -->
-                <div class="box-content">
+                <div id="box-contact" class="box-content collapse in">
                     <h4>Get in touch with me</h4>
-                    <hr />
-                    <p><strong>Email:</strong>mail@ thisdomain</p>
+                    <p><strong>Email:</strong>mail [at] this domain</p>
                 </div><!-- /.box-content -->
             </div><!-- /.box.span4 -->
             <div class="span8">

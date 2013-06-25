@@ -24,11 +24,11 @@
             <div class="box-header navbar-inverse">
                 <h2><i class="icon-list-alt"></i><span class="break"></span>Overview</h2>
                 <div class="box-icon">
-                    <a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+                    <a href="#" class="btn-minimize"><i class="icon-chevron-up" data-toggle="collapse" data-target="#box-overview"></i></a>
                     <a href="#" class="btn-close"><i class="icon-remove"></i></a>
                 </div><!-- /.box-icon -->
             </div><!-- /.box-header.navbar-inverse -->
-            <div class="box-content">
+            <div id="box-overview" class="box-content collapse in">
                 <table class="table table-bordered">
                     <tr>
                         <td>

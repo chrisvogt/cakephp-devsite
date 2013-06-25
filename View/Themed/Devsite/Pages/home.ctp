@@ -79,12 +79,12 @@
                         <div class="box-header">
                             <h2><i class="icon-rss"></i><span class="break"></span>Following & Reading</h2>
                             <div class="box-icon">
-                                <a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+                                <a href="#" class="btn-minimize" data-toggle="collapse" data-target="#widget-socialTimeline"><i class="icon-chevron-up"></i></a>
                                 <a href="#" class="btn-close"><i class="icon-remove"></i></a>
                             </div><!-- /.box-icon -->
                         </div><!-- /.box-header -->
-                        <div class="box-content">
-                            <div id="socialTimeline"></div>
+                        <div id="widget-socialTimeline" class="box-content">
+                            <div id="socialTimeline" class="collapse in"></div>
                         </div><!-- /.box-content -->
                     </div><!-- /.box.span12 -->
                 </div><!--/.row-fluid -->
