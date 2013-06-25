@@ -44,7 +44,7 @@
                         <td><i class="icon-calendar">&nbsp;</i> Created: <?php echo h($this->Time->nice($details['created_at'])); ?></td>
                     </tr>
                     <tr>
-                        <td><i class="icon-calendar-empty">&nbsp;</i> Last commit: <?php echo h($this->Time->timeAgoInWords($details['pushed_at'], 'America/Phoenix')); ?></td>
+                        <td><i class="icon-calendar-empty">&nbsp;</i> Last commit: <?php echo h($this->Time->timeAgoInWords($details['pushed_at'])); ?></td>
                     </tr>
                     <tr>
                         <td><i class="icon-github-sign">&nbsp;</i> Repository: <?php echo $this->Html->link($details['name'], $details['html_url']); ?> </td>
