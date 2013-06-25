@@ -291,3 +291,6 @@ body {
 }
 
 }
+div.light.dpSocialTimelineLoading {
+	background: url(../img/ajax-loader.gif) no-repeat 50% 50%!important;
+}
