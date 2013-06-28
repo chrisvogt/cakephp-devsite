@@ -26,6 +26,8 @@ class ProjectsController extends AppController {
 		$this->Project->recursive = -1;
         $this->Project->contain('ProjectMetum');
         $projects = $this->_trimProjectDescription($this->paginate(array('Project.is_active' => true, 'Project.is_private' => false)));
+        $projects = $this->ProjectMetum->extractMetadataFromProjectSet($projects);
+      #  debug($projects);
         $this->set('projects', $projects);
         $this->set('description_for_layout', 'Browse a collection of my public projects, open source PHP applications, and free themes.');
 	}
@@ -223,77 +225,77 @@ class ProjectsController extends AppController {
  * ------ INTERNAL METHODS & FUNCTIONS ------
  */
         
-        /**
-         * Extract the full repository name ('username/repo') from Project meta
-         * 
-         * Strips extra URL data if necessary.
-         * 
-         * @since 0.1.1
-         * @param array $repo
-         * @return boolean
-         */
-        protected function _processRepoUrls($repo) {
-            $repoUrl = Set::classicExtract($repo, '{n}.ProjectMetum.value');            
-            if(isset($repoUrl[0])) {
-                $strippedUrl = rtrim($repoUrl[0], '.git');
-                $urls = array('repo'  => $strippedUrl);
-                return $urls;
-            } else {
-                return false;
+/**
+ * Extract the full repository name ('username/repo') from Project meta
+ * 
+ * Strips extra URL data if necessary.
+ * 
+ * @since 0.1.1
+ * @param array $repo
+ * @return boolean
+ */
+    protected function _processRepoUrls($repo) {
+        $repoUrl = Set::classicExtract($repo, '{n}.ProjectMetum.value');            
+        if(isset($repoUrl[0])) {
+            $strippedUrl = rtrim($repoUrl[0], '.git');
+            $urls = array('repo'  => $strippedUrl);
+            return $urls;
+        } else {
+            return false;
+        }
+    }
+
+/**
+ * Create or update the projects `last_commit` meta.
+ * 
+ * @since 0.1.1
+ * @param array $project Project data
+ * @param integer $id Project ID
+ * @param array $details Extracted from the Github API on the repository.
+ * @param array $lastCommit `last_commit` meta from $ProjectMeta->find()
+ */
+    protected function _trackLastCommit($project, $id, $details, $lastCommit) {
+            if (!$lastCommit) {
+                $this->data = array(
+                    'id'            => null,
+                    'project_id'    => $id,
+                    'key'           => 'last_commit',
+                    'value'         => $details['pushed_at']
+                );
+                $this->ProjectMetum->save($this->data);
+            } elseif ($lastCommit && $lastCommit['ProjectMetum']['value'] != $details['pushed_at']) {
+                $this->ProjectMetum->id = $lastCommit['ProjectMetum']['id'];
+                $this->ProjectMetum->saveField('value', $details['pushed_at']);
+            }
+
+            $title_for_layout = $project['Project']['name'];
+    $this->set(compact('project', 'repo', 'commits', 'title_for_layout'));
+    }
+
+/**
+ * Trim the project description ('content') to the <!-- more --> tag.
+ * 
+ * @since 0.1.1
+ * @param array $projects
+ * @return array
+ */
+    protected function _trimProjectDescription($projects) {
+        foreach ($projects as &$project) {
+            if ($project['Project']['content']) {
+                $marker = '<!-- more -->';
+                $pos = stripos($project['Project']['content'], $marker);
+                $view = new View($this);
+                $TextHelper = $view->loadHelper('Text');
+                $project['Project']['content'] = $TextHelper->truncate(
+                    $project['Project']['content'],
+                    $pos,
+                    array(
+                        'ellipsis' => false,
+                        'exact'    => true )
+                );
             }
         }
-        
-        /**
-         * Create or update the projects `last_commit` meta.
-         * 
-         * @since 0.1.1
-         * @param array $project Project data
-         * @param integer $id Project ID
-         * @param array $details Extracted from the Github API on the repository.
-         * @param array $lastCommit `last_commit` meta from $ProjectMeta->find()
-         */
-        protected function _trackLastCommit($project, $id, $details, $lastCommit) {
-                if (!$lastCommit) {
-                    $this->data = array(
-                        'id'            => null,
-                        'project_id'    => $id,
-                        'key'           => 'last_commit',
-                        'value'         => $details['pushed_at']
-                    );
-                    $this->ProjectMetum->save($this->data);
-                } elseif ($lastCommit && $lastCommit['ProjectMetum']['value'] != $details['pushed_at']) {
-                    $this->ProjectMetum->id = $lastCommit['ProjectMetum']['id'];
-                    $this->ProjectMetum->saveField('value', $details['pushed_at']);
-                }
-                
-                $title_for_layout = $project['Project']['name'];
-		$this->set(compact('project', 'repo', 'commits', 'title_for_layout'));
-        }
-        
-        /**
-         * Trim the project description ('content') to the <!-- more --> tag.
-         * 
-         * @since 0.1.1
-         * @param array $projects
-         * @return array
-         */
-        protected function _trimProjectDescription($projects) {
-            foreach ($projects as &$project) {
-                if ($project['Project']['content']) {
-                    $marker = '<!-- more -->';
-                    $pos = stripos($project['Project']['content'], $marker);
-                    $view = new View($this);
-                    $TextHelper = $view->loadHelper('Text');
-                    $project['Project']['content'] = $TextHelper->truncate(
-                        $project['Project']['content'],
-                        $pos,
-                        array(
-                            'ellipsis' => false,
-                            'exact'    => true )
-                    );
-                }
-            }
-            return $projects;
-        }
+        return $projects;
+    }
         
 }

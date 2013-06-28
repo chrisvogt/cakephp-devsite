@@ -12,14 +12,16 @@
 
             <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
                 <tr>
-                    <th><?php echo $this->Paginator->sort('name'); ?></th>
-                    <th><?php echo __('Content'); ?></th>
-                    <th><?php echo $this->Paginator->sort('created'); ?></th>
+                    <th><?php echo __('Name'); ?></th>
+                    <th><?php echo __('Content'); ?></th> 
+                    <th><?php echo __('Updated'); ?> </th> 
+                    <th><?php echo __('Created'); ?></th>
                 </tr>
                 <?php foreach ($projects as $project): ?>
                     <tr>
                         <td><?php echo $this->Html->link(h($project['Project']['name']), array('action' => 'view', $project['Project']['id'])); ?>&nbsp;</td>
                         <td><?php echo h($project['Project']['content']); ?>&nbsp;</td>
+                        <td><?php echo $this->Time->format($project['ProjectMetum']['last_commit']); ?> </td>
                         <td><?php echo $this->Time->format(h($project['Project']['created'])); ?>&nbsp;</td>
                     </tr>
                 <?php endforeach; ?>
@@ -34,17 +36,16 @@
                     ?> 
                 </small>
             </p>
-            <div class="pagination">
+            <div class="pager">
                 <ul>
                     <?php
-                    echo $this->Paginator->prev('< ' . __('Previous'), array('tag' => 'li'), null, array('class' => 'disabled', 'tag' => 'li', 'disabledTag' => 'a'));
-                    echo $this->Paginator->numbers(array('separator' => '', 'currentTag' => 'a', 'tag' => 'li', 'currentClass' => 'disabled'));
-                    echo $this->Paginator->next(__('Next') . ' >', array('tag' => 'li'), null, array('class' => 'disabled', 'tag' => 'li', 'disabledTag' => 'a'));
+                    echo $this->Paginator->prev('< ' . __('Previous'), array('tag' => 'li'), null, array('class' => 'disabled previous', 'tag' => 'li', 'disabledTag' => 'a'));
+                    echo $this->Paginator->numbers(array('separator' => '', 'currentTag' => 'a', 'tag' => 'li', 'currentClass' => 'disabled'), array('class' => 'pagination'));
+                    echo $this->Paginator->next(__('Next') . ' >', array('tag' => 'li'), null, array('class' => 'disabled next', 'tag' => 'li', 'disabledTag' => 'a'));
                     ?>
                 </ul>
             </div><!-- .pagination -->
         </div><!-- .index -->
-        <?php echo $this->GithubRepo->widget('chrisvogt/cakephp-devsite'); ?> 
     </div><!-- #page-content .span9 -->
 </div><!-- #page-container .row-fluid -->
 <?php echo $this->Html->script('/GithubRepoWidget/js/jquery.githubRepoWidget.min.js', array('inline' => false, 'block' => 'scriptBottom')); ?> 

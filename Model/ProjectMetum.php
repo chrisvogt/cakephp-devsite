@@ -25,4 +25,23 @@ class ProjectMetum extends AppModel {
      */
     public $belongsTo = array('Project');
     
+    
+    public function extractMetadataFromProjectSet($projects) {
+        foreach ($projects as &$project) {
+            $project['ProjectMetum'] = $this->_extractMetadata($project);
+        }
+        return $projects;
+    }
+    
+    protected function _extractMetadata(&$project) {
+        $validFields = array('repo', 'no_commits', 'last_commit');
+        $meta = array();
+        foreach ($project['ProjectMetum'] as $metum) {
+            if (in_array($metum['key'], $validFields)) {
+                $meta[$metum['key']] = $metum['value'];
+            }
+        }
+        return $meta;
+    }
+    
 }

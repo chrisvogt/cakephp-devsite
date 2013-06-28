@@ -18,6 +18,4 @@ App::uses('AppController', 'Controller');
  */
 class ProjectMetaController extends AppController {
     
-    #
-    
 }
