@@ -53,7 +53,7 @@
         <?php echo $this->Html->css('core'); ?> 
         <?php echo $this->Html->css('devsite'); ?>
         <?php if ($this->params->here === '/') echo $this->Html->css('/DpSocialTimeline/css/dpSocialTimeline.css'); ?>  
-        <?php if ($this->params->here === '/projects') echo $this->Html->css('/GithubRepoWidget/css/githubRepoWidget.css'); ?> 
+        <?php echo $this->Html->css('/GithubRepoWidget/css/githubRepoWidget.css'); ?> 
         <?php echo $this->fetch('css'); ?> 
 
         <style type="text/css">
