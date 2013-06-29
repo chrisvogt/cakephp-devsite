@@ -27,7 +27,7 @@
                                             } ?>  
                                         <tr>
                                             <td><?php echo $this->Html->link(__($project['Project']['name']), array('controller' => 'projects', 'action' => 'view', $project['Project']['id'])); ?> </td>
-                                            <td><?php echo $this->Time->timeAgoInWords($lastCommit); ?> </td>
+                                            <td><?php echo $this->Time->format($lastCommit); ?> </td>
                                         </tr>
                                         <?php } ?> 
                                     </tbody>

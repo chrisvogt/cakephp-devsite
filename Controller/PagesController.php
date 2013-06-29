@@ -87,8 +87,8 @@ class PagesController extends AppController {
 		}
                 if ($page == 'home') {
                     $this->loadModel('Project');
-                    $this->set('projects', $this->Project->find('all'));
-                    $this->set('events', $this->GithubApi->recentEvents(array('type' => 'users', 'target' => Configure::read('social.github') . '/events/public'), 6));
+                    $this->set('projects', $this->Project->find('all', array('order' => 'Project.created')));
+                    $this->set('events', $this->GithubApi->recentEvents(array('type' => 'users', 'target' => Configure::read('social.github') . '/events/public'), 5));
                     $this->set('description_for_layout', 'Home page for Chris Vogt\'s instance of Devsite, a developer\'s portal and project management suite.');
                 }
                 if ($page == 'about') {
