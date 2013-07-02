@@ -83,8 +83,5 @@
                         </div><!--/.row-fluid -->
                 </div><!--/span-->
             </div><!-- /.row-fluid -->
-
-            <!-- Le javascript
-            ================================================== -->
             <?php echo $this->Html->script('/DpSocialTimeline/js/jquery.isotope.min.js', array('inline' => false, 'block' => 'scriptBottom')); ?> 
             <?php echo $this->Html->script('/DpSocialTimeline/js/jquery.dpSocialTimeline.min.js', array('inline' => false, 'block' => 'scriptBottom')); ?> 
