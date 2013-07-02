@@ -1,13 +1,22 @@
 
             <div class="row-fluid">
-                <div class="span12">
-                    <div class="row-fluid">
-                        <div class="box span4">
+                <div class="box span4">
+                    <div class="box-header">
+                        <h2><i class="icon-github"></i><span class="break"></span>Github Activity</h2>
+                        <div class="box-icon">
+                            <a href="#" class="btn-minimize" data-toggle="collapse" data-target="#widget-github"><i class="icon-chevron-up"></i></a>
+                        </div><!-- /.box-icon -->
+                    </div><!-- /.box-header -->
+                    <div id="widget-github" class="box-content collapse in">
+                        <?php echo $this->GithubEvents->makeWidget($events); ?> 
+                    </div><!-- /.box-content -->
+                </div><!-- /.box.span4 -->
+                <div class="span8">
+                        <div class="box span6">
                             <div class="box-header">
                                 <h2><i class="icon-code-fork"></i><span class="break"></span>Projects</h2>
                                 <div class="box-icon">
                                     <a href="#" class="btn-minimize" data-toggle="collapse" data-target="#widget-projects"><i class="icon-chevron-up"></i></a>
-                                    <a href="#" class="btn-close"><i class="icon-remove"></i></a>
                                 </div><!-- /.box-icon -->
                             </div><!-- /.box-header -->
                             <div id="widget-projects" class="box-content collapse in">
@@ -38,12 +47,11 @@
                                 <br class="clearfix" />
                             </div>
                         </div><!--/span-->
-                        <div class="box span4">
+                        <div class="box span6">
                             <div class="box-header navbar-inverse">
                                 <h2><i class="icon-twitter"></i><span class="break"></span>Twitter Status</h2>
                                 <div class="box-icon">
                                     <a href="#" class="btn-minimize" data-toggle="collapse" data-target="#widget-twitter"><i class="icon-chevron-up"></i></a>
-                                    <a href="#" class="btn-close"><i class="icon-remove"></i></a>
                                 </div><!-- /.box-icon -->
                             </div><!-- /.box-header.navbar-inverse -->
                             <div id="widget-twitter" class="box-content pagination-centered collapse in">
@@ -60,34 +68,20 @@
                                 <br class="clearfix" />
                             </div>
                         </div><!--/span-->
-                        <div class="box span4">
-                            <div class="box-header">
-                                <h2><i class="icon-github"></i><span class="break"></span>Github Activity</h2>
-                                <div class="box-icon">
-                                    <a href="#" class="btn-minimize" data-toggle="collapse" data-target="#widget-github"><i class="icon-chevron-up"></i></a>
-                                    <a href="#" class="btn-close"><i class="icon-remove"></i></a>
-                                </div><!-- /.box-icon -->
-                            </div><!-- /.box-header -->
-                            <div id="widget-github" class="box-content collapse in">
-                                <?php echo $this->element('event_list') ?> 
-                            </div><!-- /.box-content -->
-                        </div><!-- /.box.span4 -->
-                    </div><!-- /.row-fluid -->
+                        <div class="row-fluid">
+                            <div class="box span12">
+                                <div class="box-header">
+                                    <h2><i class="icon-rss"></i><span class="break"></span>Following & Reading</h2>
+                                    <div class="box-icon">
+                                        <a href="#" class="btn-minimize" data-toggle="collapse" data-target="#widget-socialTimeline"><i class="icon-chevron-up"></i></a>
+                                    </div><!-- /.box-icon -->
+                                </div><!-- /.box-header -->
+                                <div id="widget-socialTimeline" class="box-content">
+                                    <div id="socialTimeline" class="collapse in"></div>
+                                </div><!-- /.box-content -->
+                            </div><!-- /.box.span8 -->
+                        </div><!--/.row-fluid -->
                 </div><!--/span-->
-                <div class="row-fluid">
-                    <div class="box span12">
-                        <div class="box-header">
-                            <h2><i class="icon-rss"></i><span class="break"></span>Following & Reading</h2>
-                            <div class="box-icon">
-                                <a href="#" class="btn-minimize" data-toggle="collapse" data-target="#widget-socialTimeline"><i class="icon-chevron-up"></i></a>
-                                <a href="#" class="btn-close"><i class="icon-remove"></i></a>
-                            </div><!-- /.box-icon -->
-                        </div><!-- /.box-header -->
-                        <div id="widget-socialTimeline" class="box-content">
-                            <div id="socialTimeline" class="collapse in"></div>
-                        </div><!-- /.box-content -->
-                    </div><!-- /.box.span12 -->
-                </div><!--/.row-fluid -->
             </div><!-- /.row-fluid -->
 
             <!-- Le javascript

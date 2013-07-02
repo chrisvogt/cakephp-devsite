@@ -7,7 +7,7 @@ App::uses('AppController', 'Controller');
  */
 class ProjectsController extends AppController {
     
-    public $components = array('GithubApi', 'Session');
+    public $components = array('GithubEventsWidget.GithubApi', 'Session');
     
     public $uses = array('Project','ProjectMetum');
     
@@ -25,9 +25,10 @@ class ProjectsController extends AppController {
 	public function index() {
 		$this->Project->recursive = -1;
         $this->Project->contain('ProjectMetum');
-        $projects = $this->_trimProjectDescription($this->paginate(array('Project.is_active' => true, 'Project.is_private' => false)));
+        $projects = $this->_trimProjectDescription($this->paginate(array(
+                'Project.is_active' => true, 'Project.is_private' => false)
+        ));
         $projects = $this->ProjectMetum->extractMetadataFromProjectSet($projects);
-      #  debug($projects);
         $this->set('projects', $projects);
         $this->set('description_for_layout', 'Browse a collection of my public projects, open source PHP applications, and free themes.');
 	}

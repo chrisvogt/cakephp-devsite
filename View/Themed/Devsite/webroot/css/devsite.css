@@ -259,25 +259,35 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
 	   -moz-border-radius: 0px 0px 2px 2px;
           	border-radius: 0px 0px 2px 2px;
 }
-#widget-github,
 #widget-projects,
 #widget-twitter {
     height: 370px;
+}
+#widget-github {
+    height: auto;
+    min-height: 747px;
 }
 
 /*------------------------------------------------------------------
 [ Events Box ]
 */
-ul.list-events {
+ul#list-events {
     margin: 0;
 }
-.list-events li {
+ul#list-events li {
     list-style: none;
-    padding: 6px 0;
+    padding: 18px 12px;
     font-size: .875em;
+    border: none;
+}
+ul#list-events .label {
+    color: #eaeaea;
+}
+ul#list-events li.odd {
+    background-color: #f9f9f9;
     border-bottom: 1px solid #efefef;
 }
-.list-events li span {
+ul#list-events li span {
     color: #aeaeae;
 }
 

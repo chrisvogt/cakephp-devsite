@@ -51,7 +51,7 @@ class PagesController extends AppController {
  *
  * @var array
  */
-	public $components = array('GithubApi', 'Recaptcha.Recaptcha');
+	public $components = array('GithubEventsWidget.GithubApi', 'Recaptcha.Recaptcha');
 
 /**
  * beforeFilter
@@ -86,9 +86,13 @@ class PagesController extends AppController {
 			$title_for_layout = Inflector::humanize($path[$count - 1]);
 		}
                 if ($page == 'home') {
+                    $this->helpers[] = 'GithubEventsWidget.GithubEvents';
                     $this->loadModel('Project');
                     $this->set('projects', $this->Project->find('all', array('order' => 'Project.created')));
-                    $this->set('events', $this->GithubApi->recentEvents(array('type' => 'users', 'target' => Configure::read('social.github') . '/events/public'), 5));
+                    $this->set('events', $this->GithubApi->recentEvents(array(
+                            'type' => 'users',
+                            'target' => Configure::read('social.github') . '/events/public'
+                    ), 12));
                     $this->set('description_for_layout', 'Home page for Chris Vogt\'s instance of Devsite, a developer\'s portal and project management suite.');
                 }
                 if ($page == 'about') {

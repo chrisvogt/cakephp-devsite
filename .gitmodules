@@ -1,0 +1,3 @@
+[submodule "Plugin/GithubEventsWidget"]
+	path = Plugin/GithubEventsWidget
+	url = https://github.com/chrisvogt/GithubEventsWidget.git
