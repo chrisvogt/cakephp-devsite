@@ -15,8 +15,8 @@
                 <ul class="nav">
                   <li><?php echo $this->Html->link(__('Home'), '/'); ?> </li>
                   <li><?php echo $this->Html->link(__('Projects'), array('controller' => 'projects', 'action' => 'index')); ?> </li>
-                  <li><?php echo $this->Html->link(__('About'), array('controller' => 'pages', 'action' => 'display', 'about')); ?> </li>
-                  <li><?php echo $this->Html->link(__('Contact'), array('controller' => 'pages', 'action' => 'display', 'contact')); ?> </li>
+                  <li><?php echo $this->Html->link(__('About'), '/about'); ?> </li>
+                  <li><?php echo $this->Html->link(__('Contact'), '/contact'); ?> </li>
                 </ul>
               </div><!--/.nav-collapse -->
             </div><!-- /.container-fluid -->
